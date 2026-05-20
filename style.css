@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -190,4 +189,329 @@ nav ul li a:hover {
 
 .join-btn:hover {
     background: rgba(255,255,255,0.15);
+}
+
+
+/* ===========================
+   SERVICES SECTION
+   =========================== */
+
+.services-section {
+    padding: 100px 120px 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Big watermark letters in background */
+.services-section::before {
+    content: "3KG";
+    position: absolute;
+    right: -40px;
+    top: 60px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 380px;
+    color: rgba(192, 57, 43, 0.07);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+    letter-spacing: -10px;
+}
+
+/* --- Section Header --- */
+.services-header {
+    margin-bottom: 48px;
+}
+
+.services-eyebrow {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 16px;
+    color: var(--red);
+    letter-spacing: 4px;
+    margin-bottom: 8px;
+}
+
+.services-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 80px;
+    color: var(--cream);
+    letter-spacing: 3px;
+    line-height: 1;
+    margin-bottom: 14px;
+}
+
+.services-title span {
+    color: white;
+}
+
+.services-sub {
+    font-family: sans-serif;
+    font-size: 15px;
+    color: rgba(212, 201, 168, 0.65);
+    letter-spacing: 1px;
+    line-height: 1.7;
+}
+
+/* --- Craft Label --- */
+.craft-label {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 36px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.craft-icon {
+    width: 52px;
+    height: 52px;
+    border: 1.5px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cream);
+    flex-shrink: 0;
+}
+
+.craft-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 28px;
+    color: var(--cream);
+    letter-spacing: 3px;
+}
+
+.craft-sub {
+    font-family: sans-serif;
+    font-size: 12px;
+    color: var(--red);
+    letter-spacing: 2px;
+    margin-top: 2px;
+}
+
+/* --- Featured Service --- */
+.featured-service {
+    background: #1a1512;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    overflow: hidden;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.featured-service::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--red);
+    border-radius: 12px 0 0 12px;
+}
+
+.featured-content {
+    padding: 36px 40px;
+    flex: 1;
+}
+
+.featured-badge {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 13px;
+    color: var(--red);
+    letter-spacing: 4px;
+    margin-bottom: 8px;
+}
+
+.featured-name {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 54px;
+    color: var(--cream);
+    letter-spacing: 3px;
+    line-height: 1;
+    margin-bottom: 14px;
+}
+
+.featured-desc {
+    font-family: sans-serif;
+    font-size: 14px;
+    color: rgba(212, 201, 168, 0.7);
+    line-height: 1.75;
+    max-width: 460px;
+    margin-bottom: 20px;
+}
+
+.featured-price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 4px;
+}
+
+.featured-price {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 48px;
+    color: var(--red);
+    letter-spacing: 2px;
+}
+
+.featured-precision {
+    font-family: sans-serif;
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.featured-time {
+    font-family: sans-serif;
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 2px;
+    margin-bottom: 28px;
+}
+
+.featured-btns {
+    display: flex;
+    gap: 16px;
+}
+
+.featured-img-wrap {
+    width: 300px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.featured-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.85) contrast(1.1);
+}
+
+/* --- Services Grid --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 80px;
+}
+
+.service-card {
+    background: #1a1512;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 10px;
+    padding: 28px 28px 24px;
+    transition: border-color 0.2s, transform 0.2s;
+    cursor: default;
+}
+
+.service-card:hover {
+    border-color: var(--red);
+    transform: translateY(-3px);
+}
+
+.service-card-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.service-icon {
+    color: var(--cream);
+    opacity: 0.7;
+    flex-shrink: 0;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+}
+
+.service-name {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 22px;
+    color: var(--cream);
+    letter-spacing: 2px;
+}
+
+.service-desc {
+    font-family: sans-serif;
+    font-size: 13px;
+    color: rgba(212, 201, 168, 0.55);
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.service-price {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 32px;
+    color: var(--red);
+    letter-spacing: 2px;
+}
+
+/* --- Services CTA --- */
+.services-cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 10px;
+}
+
+.cta-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 72px;
+    color: var(--cream);
+    letter-spacing: 3px;
+    line-height: 1;
+}
+
+.cta-title.red {
+    color: var(--red);
+}
+
+.cta-sub {
+    font-family: sans-serif;
+    font-size: 14px;
+    color: rgba(212, 201, 168, 0.5);
+    letter-spacing: 1.5px;
+    margin-top: 10px;
+}
+
+.cta-btns {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+/* ===== FOOTER ===== */
+.site-footer {
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding: 28px 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 28px;
+    color: var(--cream);
+    letter-spacing: 4px;
+}
+
+.footer-mid {
+    font-family: sans-serif;
+    font-size: 12px;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 2px;
+}
+
+.footer-copy {
+    font-family: sans-serif;
+    font-size: 12px;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 1px;
 }
