@@ -14,6 +14,7 @@
 body {
     background-color: var(--dark);
     font-family: "Bebas Neue", sans-serif;
+
 }
 
 /* ===== HEADER ===== */
@@ -23,6 +24,8 @@ header {
     align-items: center;
     padding: 16px 40px;
     border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: sticky;
+    top: 0;
 }
 
 header img.logo {
@@ -481,6 +484,329 @@ nav ul li a:hover {
 }
 
 .cta-btns {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+/* ===== FOOTER ===== */
+.site-footer {
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding: 28px 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 28px;
+    color: var(--cream);
+    letter-spacing: 4px;
+}
+
+.footer-mid {
+    font-family: sans-serif;
+    font-size: 12px;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 2px;
+}
+
+.footer-copy {
+    font-family: sans-serif;
+    font-size: 12px;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 1px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --red: #C0392B;
+    --cream: #D4C9A8;
+    --dark: #221E1B;
+    --gray: #4a4a4a;
+}
+
+body {
+    background-color: var(--dark);
+    font-family: "Bebas Neue", sans-serif;
+}
+
+/* ===== HEADER ===== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+header img.logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 90px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 60px;
+    align-items: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--cream);
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 22px;
+    letter-spacing: 1px;
+    transition: color 0.2s;
+}
+
+nav ul li a:hover {
+    color: white;
+}
+
+nav ul li a.active {
+    color: var(--red);
+    border-bottom: 2px solid var(--red);
+    padding-bottom: 2px;
+}
+
+.book-btn {
+    background-color: var(--red);
+    color: white;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.book-btn:hover {
+    background-color: #a93226;
+}
+
+.ourwork-btn {
+    background-color: transparent;
+    color: white;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+    padding: 12px 28px;
+    border: 1.5px solid white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.ourwork-btn:hover {
+    background: rgba(255,255,255,0.08);
+}
+
+/* ===== HERO ===== */
+.work-hero {
+    padding: 80px 120px 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-eyebrow {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 15px;
+    color: var(--red);
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+}
+
+.hero-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 110px;
+    color: var(--cream);
+    line-height: 0.9;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.hero-title span {
+    color: var(--red);
+}
+
+.hero-sub {
+    font-family: sans-serif;
+    font-size: 14px;
+    color: rgba(212, 201, 168, 0.6);
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+    max-width: 420px;
+}
+
+.hero-watermark {
+    position: absolute;
+    right: -20px;
+    top: 20px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 340px;
+    color: rgba(192, 57, 43, 0.06);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+    letter-spacing: -10px;
+}
+
+/* ===== DIVIDER ===== */
+.divider {
+    height: 1px;
+    background: rgba(255,255,255,0.08);
+    margin: 0 120px;
+}
+
+/* ===== PORTFOLIO SECTION ===== */
+.portfolio-section {
+    padding: 60px 120px 80px;
+}
+
+/* Filter Tabs */
+.filter-tabs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 44px;
+}
+
+.filter-btn {
+    background: transparent;
+    color: var(--cream);
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 17px;
+    letter-spacing: 2px;
+    padding: 10px 24px;
+    border: 1.5px solid rgba(255,255,255,0.2);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filter-btn:hover {
+    border-color: var(--cream);
+    color: white;
+}
+
+.filter-btn.active {
+    background: transparent;
+    border-color: var(--cream);
+    color: white;
+}
+
+/* Portfolio Label */
+.portfolio-label {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 20px;
+    color: var(--cream);
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+    opacity: 0.7;
+}
+
+/* Grid */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.grid-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    aspect-ratio: 4 / 3;
+    cursor: pointer;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.82) contrast(1.1);
+    transition: transform 0.4s ease, filter 0.3s;
+}
+
+.grid-item:hover img {
+    transform: scale(1.06);
+    filter: brightness(0.6) contrast(1.15);
+}
+
+/* Overlay label */
+.grid-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    padding: 14px 16px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.grid-overlay span {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 16px;
+    color: white;
+    letter-spacing: 3px;
+    background: var(--red);
+    padding: 4px 12px;
+    border-radius: 4px;
+}
+
+.grid-item:hover .grid-overlay {
+    opacity: 1;
+}
+
+/* Hidden state for filter */
+.grid-item.hidden {
+    display: none;
+}
+
+/* ===== NEXT CTA ===== */
+.next-cta {
+    padding: 70px 120px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+.next-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 80px;
+    color: var(--cream);
+    letter-spacing: 3px;
+    line-height: 1;
+}
+
+.next-title.red {
+    color: var(--red);
+}
+
+.next-sub {
+    font-family: sans-serif;
+    font-size: 14px;
+    color: rgba(212, 201, 168, 0.45);
+    letter-spacing: 1.5px;
+    margin-top: 10px;
+}
+
+.next-btns {
     display: flex;
     gap: 16px;
     align-items: center;
