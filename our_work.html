@@ -13,7 +13,9 @@
 <!-- ===== HEADER ===== -->
 <header>
     <img class="logo" src="images/339888103_617339846927129_7791889255149775750_n.jpg" alt="logo">
-    <nav>
+    
+    <!-- Desktop Nav -->
+    <nav class="desktop-nav">
         <ul>
             <li><a href="index.html">HOME</a></li>
             <li><a href="services.html">SERVICES</a></li>
@@ -22,8 +24,30 @@
             <li><a href="contact.html">CONTACT</a></li>
         </ul>
     </nav>
-    <button class="book-btn">BOOK NOW</button>
+    
+    <a href="book.html" class="book-btn desktop-book">BOOK NOW</a>
+    
+    <!-- Hamburger Button -->
+    <button class="hamburger-btn" onclick="toggleMobileNav()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 </header>
+
+<!-- ===== MOBILE NAV DRAWER ===== -->
+<div class="mobile-nav-overlay" onclick="toggleMobileNav()"></div>
+<div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" onclick="toggleMobileNav()">×</button>
+    <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="services.html">SERVICES</a></li>
+        <li><a href="our_work.html" class="active">OUR WORK</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+    </ul>
+    <a href="book.html" class="book-btn">BOOK NOW</a>
+</div>
 
 <!-- ===== PAGE HERO ===== -->
 <section class="work-hero">
@@ -154,8 +178,6 @@
             </div>
         </div>
 
-        
-
     </div>
 </section>
 
@@ -167,8 +189,8 @@
         <p class="next-sub">Book a slot and leave looking clean.</p>
     </div>
     <div class="next-btns">
-        <button class="book-btn">BOOK NOW</button>
-        <button class="ourwork-btn">OUR WORK</button>
+        <a href="book.html" class="book-btn">BOOK NOW</a>
+        <a href="our_work.html" class="ourwork-btn">OUR WORK</a>
     </div>
 </section>
 
@@ -201,6 +223,12 @@
             });
         });
     });
+
+    // Mobile nav toggle
+    function toggleMobileNav() {
+        document.getElementById('mobileNav').classList.toggle('active');
+        document.querySelector('.mobile-nav-overlay').classList.toggle('active');
+    }
 </script>
 
 </body>

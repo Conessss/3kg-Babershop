@@ -6,24 +6,50 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="icon" href="images/339888103_617339846927129_7791889255149775750_n.jpg" />
-    <title>3KG Barbershop-HOME</title>
+    <title>3KG Barbershop — HOME</title>
 </head>
 <body>
 
+<!-- ===== HEADER ===== -->
 <header>
     <img class="logo" src="images/339888103_617339846927129_7791889255149775750_n.jpg" alt="logo">
-    <nav>
+    
+    <!-- Desktop Nav -->
+    <nav class="desktop-nav">
         <ul>
             <li><a href="index.html" class="active">HOME</a></li>
             <li><a href="services.html">SERVICES</a></li>
             <li><a href="our_work.html">OUR WORK</a></li>
             <li><a href="about.html">ABOUT</a></li>
-            <li><a href="#">CONTACT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
         </ul>
     </nav>
-    <button class="book-btn">BOOK NOW</button>
+    
+    <a href="book.html" class="book-btn desktop-book">BOOK NOW</a>
+    
+    <!-- Hamburger Button -->
+    <button class="hamburger-btn" onclick="toggleMobileNav()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 </header>
 
+<!-- ===== MOBILE NAV DRAWER ===== -->
+<div class="mobile-nav-overlay" onclick="toggleMobileNav()"></div>
+<div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" onclick="toggleMobileNav()">×</button>
+    <ul>
+        <li><a href="index.html" class="active">HOME</a></li>
+        <li><a href="services.html">SERVICES</a></li>
+        <li><a href="our_work.html">OUR WORK</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+    </ul>
+    <a href="book.html" class="book-btn">BOOK NOW</a>
+</div>
+
+<!-- ===== HERO ===== -->
 <div class="body-part">
     <div class="left-body">
         <p class="tagline">— PRECISION CUTS FOR THE MODERN MAN</p>
@@ -31,8 +57,8 @@
         <p class="no-fluff">.NO FLUFF. ALL CRAFT.</p>
         <p class="est">— EST. SINCE 2023.</p>
         <div class="body-btn">
-            <button class="book-btn">BOOK NOW</button>
-            <button class="ourwork-btn">OUR WORK</button>
+            <a href="book.html" class="book-btn" style="text-decoration: none;">BOOK NOW</a>
+        <a href="our_work.html" class="ourwork-btn" style="text-decoration: none;">OUR WORK</a>
         </div>
     </div>
     <div class="right-body">
@@ -40,14 +66,15 @@
     </div>
 </div>
 
+<!-- ===== JOIN SECTION ===== -->
 <div class="join-section">
     <div class="join-left">
         <h2>JOIN THE 3KG FAM.</h2>
-        <p>Create an account for priority booking, member promos, and more.</p>
+        <p>Book now for exclusive haircuts.</p>
     </div>
     <div class="join-btns">
-        <button class="join-btn">LOGIN</button>
-        <button class="join-btn">SIGN UP</button>
+        <a href="book.html" class="book-btn" style="border: 1.5px solid white;">BOOK NOW</a>
+        <a href="our_work.html" class="ourwork-btn" style="text-decoration: none;">OUR WORK</a>
     </div>
 </div>
 
@@ -57,6 +84,13 @@
     <span class="footer-mid">EST. SINCE 2023 &nbsp;·&nbsp; NO FLUFF &nbsp;·&nbsp; ALL CRAFT</span>
     <span class="footer-copy">3KG BARBERSHOP © 2026</span>
 </footer>
+
+<script>
+    function toggleMobileNav() {
+        document.getElementById('mobileNav').classList.toggle('active');
+        document.querySelector('.mobile-nav-overlay').classList.toggle('active');
+    }
+</script>
 
 </body>
 </html>

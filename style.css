@@ -71,6 +71,10 @@ nav ul li a:hover {
     transition: background 0.2s;
 }
 
+.book-btn a {
+    color: white;
+    text-decoration: none;
+}
 .book-btn:hover {
     background-color: #a93226;
 }
@@ -586,6 +590,7 @@ nav ul li a.active {
     border-radius: 8px;
     cursor: pointer;
     transition: background 0.2s;
+    text-decoration: none;
 }
 
 .book-btn:hover {
@@ -807,6 +812,464 @@ nav ul li a.active {
     align-items: center;
 }
 
+/* ===========================
+   CONTACT PAGE STYLES
+   =========================== */
+
+/* ===== CONTACT HERO ===== */
+.contact-hero {
+    padding: 80px 120px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-eyebrow {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 15px;
+    color: var(--red);
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+}
+
+.contact-hero-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 110px;
+    color: var(--cream);
+    line-height: 0.9;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+}
+
+.contact-hero-title span {
+    color: var(--red);
+}
+
+.contact-hero-sub {
+    font-family: sans-serif;
+    font-size: 14px;
+    color: rgba(212, 201, 168, 0.6);
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+    max-width: 420px;
+}
+
+/* ===== SHOP INFO ===== */
+.shop-info {
+    padding: 40px 120px 50px;
+    text-align: center;
+}
+
+.shop-info-dot {
+    width: 10px;
+    height: 10px;
+    background-color: var(--red);
+    border-radius: 50%;
+    margin: 0 auto 16px;
+}
+
+.shop-info-name {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 28px;
+    color: var(--cream);
+    letter-spacing: 4px;
+    margin-bottom: 6px;
+}
+
+.shop-info-address {
+    font-family: sans-serif;
+    font-size: 12px;
+    color: rgba(212, 201, 168, 0.5);
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.maps-btn {
+    display: inline-block;
+    background-color: var(--red);
+    color: white;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 14px;
+    letter-spacing: 3px;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.maps-btn:hover {
+    background-color: #a93226;
+}
+
+/* ===== MAP SECTION ===== */
+.map-section {
+    padding: 0 120px 60px;
+}
+
+.map-container {
+    width: 100%;
+    height: 600px;
+    border-radius: 0;
+    overflow: hidden;
+    background: #1a1512;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+/* ===== CONTACT DETAILS SECTION ===== */
+.contact-details-section {
+    padding: 0 120px 80px;
+}
+
+.contact-details-card {
+    background: #3B2314;
+    border: 1px solid rgba(255,255,255,0.07);
+    display: flex;
+    align-items: center;
+    padding: 60px 80px;
+    gap: 400px;
+    justify-content: space-between;
+}
+
+.contact-details-left {
+    flex-shrink: 0;
+    margin-left: 150px;
+}
+
+.contact-details-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 72px;
+    color: var(--cream);
+    letter-spacing: 4px;
+    line-height: 1;
+    opacity: 0.8;
+}
+
+.contact-details-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.detail-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.detail-icon {
+    color: var(--cream);
+    opacity: 0.6;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.detail-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.detail-label {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 12px;
+    color: var(--red);
+    letter-spacing: 3px;
+}
+
+.detail-value {
+    font-family: sans-serif;
+    font-size: 14px;
+    color: rgba(212, 201, 168, 0.7);
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+}
+
+.detail-row img{
+    width: 50px;
+    height: 50px;
+}
+
+/* ===========================
+   BOOKING PAGE STYLES
+   =========================== */
+
+/* ===== BOOKING SECTION ===== */
+.booking-section {
+    padding: 60px 120px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* ===== LEFT: SERVICE CARD ===== */
+.booking-service-card {
+    background: #1a1512;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px;
+    padding: 40px;
+}
+
+.booking-service-eyebrow {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 12px;
+    color: var(--red);
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+}
+
+.booking-service-name {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 32px;
+    color: var(--cream);
+    letter-spacing: 3px;
+    line-height: 1.1;
+    margin-bottom: 16px;
+}
+
+.booking-service-desc {
+    font-family: sans-serif;
+    font-size: 12px;
+    color: rgba(212, 201, 168, 0.6);
+    line-height: 1.7;
+    letter-spacing: 0.5px;
+    margin-bottom: 24px;
+}
+
+.booking-service-img {
+    width: 100%;
+    height: 360px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+
+.booking-service-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.booking-service-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.booking-price-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.booking-price {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    color: var(--red);
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
+.booking-price-label {
+    font-family: sans-serif;
+    font-size: 10px;
+    color: rgba(212, 201, 168, 0.5);
+    letter-spacing: 2px;
+}
+
+.booking-time {
+    font-family: sans-serif;
+    font-size: 11px;
+    color: rgba(212, 201, 168, 0.4);
+    letter-spacing: 1px;
+}
+
+.learn-more-btn {
+    background: transparent;
+    color: var(--cream);
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    padding: 10px 24px;
+    border: 1.5px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.learn-more-btn:hover {
+    border-color: var(--cream);
+    background: rgba(255,255,255,0.05);
+}
+
+/* ===== RIGHT: BOOKING FORM CARD ===== */
+.booking-form-card {
+    background: #1a1512;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px;
+    padding: 40px;
+}
+
+.booking-form-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.booking-form-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 48px;
+    color: var(--cream);
+    letter-spacing: 6px;
+    line-height: 1;
+    margin-bottom: 6px;
+}
+
+.booking-form-sub {
+    font-family: sans-serif;
+    font-size: 11px;
+    color: rgba(212, 201, 168, 0.5);
+    letter-spacing: 2px;
+}
+
+/* ===== FORM ===== */
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.booking-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.booking-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.booking-form-group.full {
+    grid-column: 1 / -1;
+}
+
+.booking-form-group label {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 11px;
+    color: var(--red);
+    letter-spacing: 3px;
+}
+
+.booking-input-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 12px 14px;
+    transition: border-color 0.2s;
+}
+
+.booking-input-wrap:focus-within {
+    border-color: var(--red);
+}
+
+.booking-input-icon {
+    opacity: 0.5;
+    flex-shrink: 0;
+}
+
+.booking-input-chevron {
+    opacity: 0.4;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.booking-input-wrap input {
+    background: transparent;
+    border: none;
+    color: var(--cream);
+    font-family: sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    width: 100%;
+    outline: none;
+}
+
+.booking-input-wrap input::placeholder {
+    color: rgba(212, 201, 168, 0.3);
+}
+
+.booking-textarea-wrap {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 12px 14px;
+    transition: border-color 0.2s;
+    position: relative;
+}
+
+.booking-textarea-wrap:focus-within {
+    border-color: var(--red);
+}
+
+.booking-textarea-wrap textarea {
+    background: transparent;
+    border: none;
+    color: var(--cream);
+    font-family: sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    width: 100%;
+    min-height: 80px;
+    resize: none;
+    outline: none;
+}
+
+.booking-textarea-wrap textarea::placeholder {
+    color: rgba(212, 201, 168, 0.3);
+}
+
+.booking-char-count {
+    font-family: sans-serif;
+    font-size: 10px;
+    color: rgba(212, 201, 168, 0.25);
+    text-align: right;
+    margin-top: 4px;
+}
+
+.booking-submit-btn {
+    width: 100%;
+    background-color: var(--red);
+    color: white;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 18px;
+    letter-spacing: 4px;
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 8px;
+}
+
+.booking-submit-btn:hover {
+    background-color: #a93226;
+}
 /* ===== FOOTER ===== */
 .site-footer {
     border-top: 1px solid rgba(255,255,255,0.07);
@@ -835,4 +1298,837 @@ nav ul li a.active {
     font-size: 12px;
     color: rgba(255,255,255,0.25);
     letter-spacing: 1px;
+}
+
+
+
+/* ===========================
+   HOMEPAGE MEDIA QUERIES
+   =========================== */
+
+@media (max-width: 768px) {
+
+    /* ===== HEADER ===== */
+    header {
+        padding: 12px 20px;
+    }
+
+    header img.logo {
+        width: 44px;
+        height: 44px;
+        margin-left: 0;
+    }
+
+    /* Hide desktop nav, show hamburger */
+    nav ul {
+        display: none;
+    }
+
+    .hamburger-btn {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+    }
+
+    .hamburger-btn span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background-color: var(--cream);
+        transition: all 0.3s;
+    }
+
+    .book-btn {
+        font-size: 14px;
+        padding: 10px 20px;
+        letter-spacing: 1px;
+        text-decoration: none;
+    }
+
+    /* ===== MOBILE NAV DRAWER ===== */
+    .mobile-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: var(--dark);
+        border-left: 1px solid rgba(255,255,255,0.1);
+        z-index: 200;
+        padding: 80px 40px 40px;
+        transition: right 0.3s ease;
+    }
+
+    .mobile-nav.active {
+        right: 0;
+    }
+
+    .mobile-nav-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.6);
+        z-index: 150;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s;
+    }
+
+    .mobile-nav-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .mobile-nav-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: transparent;
+        border: none;
+        color: var(--cream);
+        font-size: 28px;
+        cursor: pointer;
+    }
+
+    .mobile-nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        list-style: none;
+    }
+
+    .mobile-nav ul li a {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 28px;
+        color: var(--cream);
+        text-decoration: none;
+        letter-spacing: 2px;
+        transition: color 0.2s;
+    }
+
+    .mobile-nav ul li a:hover,
+    .mobile-nav ul li a.active {
+        color: var(--red);
+    }
+
+    .mobile-nav .book-btn {
+        margin-top: 32px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .body-part {
+        flex-direction: column;
+        padding: 40px 24px 50px;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .left-body {
+        max-width: 100%;
+        order: 1;
+    }
+
+    .left-body .tagline {
+        font-size: 14px;
+        letter-spacing: 2px;
+        margin-bottom: 12px;
+    }
+
+    .left-body h1 {
+        font-size: 64px;
+        margin-bottom: 24px;
+    }
+
+    .left-body .no-fluff {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+
+    .left-body .est {
+        font-size: 13px;
+        margin-bottom: 28px;
+    }
+
+    .body-btn {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .body-btn .book-btn,
+    .body-btn .ourwork-btn {
+        font-size: 14px;
+        padding: 12px 24px;
+        letter-spacing: 1px;
+    }
+
+    .right-body {
+        order: 0;
+    }
+
+    .right-body img {
+        width: 200px;
+        height: 200px;
+        margin-right: 0;
+    }
+
+    /* ===== JOIN SECTION ===== */
+    .join-section {
+        flex-direction: column;
+        padding: 32px 24px;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .join-left h2 {
+        font-size: 32px;
+        letter-spacing: 2px;
+    }
+
+    .join-left p {
+        font-size: 13px;
+    }
+
+    .join-btns {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .join-btn {
+        font-size: 14px;
+        padding: 10px 28px;
+        flex: 1;
+        max-width: 140px;
+    }
+
+    /* ===== FOOTER ===== */
+    .site-footer {
+        flex-direction: column;
+        gap: 12px;
+        padding: 24px;
+        text-align: center;
+    }
+
+    .footer-logo {
+        font-size: 24px;
+    }
+
+    .footer-mid,
+    .footer-copy {
+        font-size: 10px;
+    }
+}
+/* Hide mobile elements on desktop */
+.hamburger-btn {
+    display: none;
+}
+
+.mobile-nav,
+.mobile-nav-overlay {
+    display: none;
+}
+
+.desktop-nav {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .hamburger-btn {
+        display: flex;
+    }
+    
+    .mobile-nav,
+    .mobile-nav-overlay {
+        display: block;
+    }
+    
+    .desktop-nav,
+    .desktop-book {
+        display: none;
+    }
+}
+
+/* ===========================
+   SERVICES PAGE MEDIA QUERIES
+   =========================== */
+
+@media (max-width: 768px) {
+
+    /* ===== SERVICES SECTION ===== */
+    .services-section {
+        padding: 40px 24px 60px;
+    }
+
+    .services-section::before {
+        font-size: 200px;
+        right: -20px;
+        top: 40px;
+    }
+
+    /* --- Section Header --- */
+    .services-header {
+        margin-bottom: 32px;
+    }
+
+    .services-eyebrow {
+        font-size: 13px;
+        letter-spacing: 3px;
+    }
+
+    .services-title {
+        font-size: 48px;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+    }
+
+    .services-sub {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    /* --- Craft Label --- */
+    .craft-label {
+        gap: 12px;
+        margin-bottom: 28px;
+        padding-bottom: 20px;
+    }
+
+    .craft-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .craft-icon img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .craft-title {
+        font-size: 22px;
+        letter-spacing: 2px;
+    }
+
+    .craft-sub {
+        font-size: 10px;
+    }
+
+    /* --- Featured Service --- */
+    .featured-service {
+        flex-direction: column;
+        margin-bottom: 32px;
+    }
+
+    .featured-service::before {
+        width: 100%;
+        height: 4px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: auto;
+        border-radius: 12px 12px 0 0;
+    }
+
+    .featured-content {
+        padding: 28px 24px;
+        order: 1;
+    }
+
+    .featured-badge {
+        font-size: 11px;
+        letter-spacing: 3px;
+    }
+
+    .featured-name {
+        font-size: 36px;
+        letter-spacing: 2px;
+    }
+
+    .featured-desc {
+        font-size: 13px;
+        max-width: 100%;
+    }
+
+    .featured-price {
+        font-size: 36px;
+    }
+
+    .featured-time {
+        margin-bottom: 20px;
+    }
+
+    .featured-btns {
+        gap: 12px;
+    }
+
+    .featured-btns .book-btn,
+    .featured-btns .ourwork-btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .featured-img-wrap {
+        width: 100%;
+        height: 240px;
+        order: 0;
+    }
+
+    /* --- Services Grid --- */
+    .services-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-bottom: 60px;
+    }
+
+    .service-card {
+        padding: 20px 18px 18px;
+    }
+
+    .service-card-top {
+        gap: 8px;
+        margin-bottom: 10px;
+    }
+
+    .service-icon img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .service-name {
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
+
+    .service-desc {
+        font-size: 11px;
+        line-height: 1.6;
+        margin-bottom: 12px;
+    }
+
+    .service-price {
+        font-size: 24px;
+    }
+
+    /* --- Services CTA --- */
+    .services-cta {
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+    }
+
+    .cta-title {
+        font-size: 42px;
+        letter-spacing: 2px;
+    }
+
+    .cta-sub {
+        font-size: 13px;
+        margin-top: 8px;
+    }
+
+    .cta-btns {
+        gap: 12px;
+    }
+
+    .cta-btns .book-btn,
+    .cta-btns .ourwork-btn {
+        font-size: 14px;
+        padding: 10px 24px;
+    }
+}
+
+/* ===========================
+   OUR WORK PAGE MEDIA QUERIES
+   =========================== */
+
+@media (max-width: 768px) {
+
+    /* ===== HERO ===== */
+    .work-hero {
+        padding: 40px 24px 40px;
+    }
+
+    .hero-eyebrow {
+        font-size: 13px;
+        letter-spacing: 3px;
+    }
+
+    .hero-title {
+        font-size: 64px;
+        letter-spacing: 2px;
+        margin-bottom: 16px;
+    }
+
+    .hero-sub {
+        font-size: 13px;
+        line-height: 1.6;
+        max-width: 100%;
+    }
+
+    .hero-watermark {
+        font-size: 180px;
+        right: -10px;
+        top: 10px;
+    }
+
+    /* ===== DIVIDER ===== */
+    .divider {
+        margin: 0 24px;
+    }
+
+    /* ===== PORTFOLIO SECTION ===== */
+    .portfolio-section {
+        padding: 40px 24px 60px;
+    }
+
+    /* Filter Tabs */
+    .filter-tabs {
+        gap: 8px;
+        margin-bottom: 32px;
+        flex-wrap: wrap;
+    }
+
+    .filter-btn {
+        font-size: 13px;
+        letter-spacing: 1px;
+        padding: 8px 16px;
+    }
+
+    /* Portfolio Label */
+    .portfolio-label {
+        font-size: 16px;
+        letter-spacing: 3px;
+        margin-bottom: 16px;
+    }
+
+    /* Grid */
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .grid-item {
+        aspect-ratio: 16 / 9;
+        border-radius: 8px;
+    }
+
+    .grid-overlay {
+        padding: 12px 14px;
+        opacity: 1;
+    }
+
+    .grid-overlay span {
+        font-size: 14px;
+        letter-spacing: 2px;
+        padding: 4px 10px;
+    }
+
+    /* ===== NEXT CTA ===== */
+    .next-cta {
+        padding: 50px 24px 60px;
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+    }
+
+    .next-title {
+        font-size: 42px;
+        letter-spacing: 2px;
+    }
+
+    .next-sub {
+        font-size: 13px;
+        margin-top: 8px;
+    }
+
+    .next-btns {
+        gap: 12px;
+    }
+
+    .next-btns .book-btn,
+    .next-btns .ourwork-btn {
+        font-size: 14px;
+        padding: 10px 24px;
+    }
+}
+
+/* ===========================
+   ABOUT PAGE MEDIA QUERIES
+   =========================== */
+
+@media (max-width: 768px) {
+
+    /* ===== ABOUT HERO ===== */
+    .about-hero {
+        padding: 40px 24px 40px;
+    }
+
+    .about-eyebrow {
+        font-size: 13px;
+        letter-spacing: 3px;
+    }
+
+    .about-hero-title {
+        font-size: 56px;
+        letter-spacing: 2px;
+        margin-bottom: 16px;
+    }
+
+    .about-hero-sub {
+        font-size: 13px;
+        line-height: 1.6;
+        max-width: 100%;
+    }
+
+    .about-hero-watermark {
+        font-size: 180px;
+        right: -10px;
+        top: 10px;
+    }
+
+    /* ===== DIVIDER ===== */
+    .divider {
+        margin: 0 24px;
+    }
+
+    /* ===== STORY SECTION ===== */
+    .about-story {
+        padding: 40px 24px;
+    }
+
+    .story-eyebrow {
+        font-size: 11px;
+        letter-spacing: 3px;
+        margin-bottom: 16px;
+    }
+
+    .story-body {
+        font-size: 14px;
+        letter-spacing: 1px;
+        line-height: 1.6;
+        margin-bottom: 16px;
+    }
+
+    /* ===== VALUES SECTION ===== */
+    .about-values {
+        padding: 50px 24px 60px;
+    }
+
+    .about-values::before {
+        font-size: 200px;
+        right: -20px;
+        top: 20px;
+    }
+
+    .values-eyebrow {
+        font-size: 13px;
+        letter-spacing: 3px;
+    }
+
+    .values-title {
+        font-size: 42px;
+        letter-spacing: 2px;
+        margin-bottom: 32px;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-bottom: 50px;
+    }
+
+    .value-card {
+        padding: 24px 20px;
+    }
+
+    .value-number {
+        font-size: 36px;
+        margin-bottom: 8px;
+    }
+
+    .value-name {
+        font-size: 22px;
+        letter-spacing: 2px;
+        margin-bottom: 8px;
+    }
+
+    .value-desc {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    /* ===== TEAM SECTION ===== */
+    .about-team {
+        padding: 0 24px 60px;
+    }
+
+    .team-header {
+        margin-bottom: 28px;
+        padding-top: 40px;
+    }
+
+    .team-eyebrow {
+        font-size: 13px;
+        letter-spacing: 3px;
+    }
+
+    .team-title {
+        font-size: 42px;
+        letter-spacing: 2px;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .team-info {
+        padding: 16px 18px 18px;
+    }
+
+    .team-name {
+        font-size: 22px;
+    }
+
+    /* ===== ABOUT CTA ===== */
+    .about-cta {
+        padding: 50px 24px 60px;
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+    }
+
+    .about-cta-title {
+        font-size: 42px;
+        letter-spacing: 2px;
+    }
+
+    .about-cta-sub {
+        font-size: 13px;
+        margin-top: 8px;
+    }
+
+    .about-cta-btns {
+        gap: 12px;
+    }
+
+    .about-cta-btns .book-btn,
+    .about-cta-btns .ourwork-btn {
+        font-size: 14px;
+        padding: 10px 24px;
+    }
+}
+
+/* ===========================
+   CONTACT PAGE MOBILE ONLY
+   =========================== */
+
+@media (max-width: 768px) {
+
+    /* ===== CONTACT HERO ===== */
+    .contact-hero {
+        padding: 40px 24px 30px;
+    }
+
+    .contact-eyebrow {
+        font-size: 13px;
+        letter-spacing: 3px;
+    }
+
+    .contact-hero-title {
+        font-size: 64px;
+        letter-spacing: 2px;
+        margin-bottom: 12px;
+    }
+
+    .contact-hero-sub {
+        font-size: 13px;
+        line-height: 1.6;
+        max-width: 100%;
+    }
+
+    /* ===== SHOP INFO ===== */
+    .shop-info {
+        padding: 30px 24px 40px;
+    }
+
+    .shop-info-dot {
+        width: 8px;
+        height: 8px;
+        margin-bottom: 12px;
+    }
+
+    .shop-info-name {
+        font-size: 22px;
+        letter-spacing: 3px;
+    }
+
+    .shop-info-address {
+        font-size: 11px;
+        margin-bottom: 16px;
+    }
+
+    .maps-btn {
+        font-size: 12px;
+        padding: 10px 24px;
+        letter-spacing: 2px;
+    }
+
+    /* ===== MAP SECTION ===== */
+    .map-section {
+        padding: 0 24px 40px;
+    }
+
+    .map-container {
+        height: 280px;
+    }
+
+    /* ===== CONTACT DETAILS SECTION ===== */
+    .contact-details-section {
+        padding: 0 24px 60px;
+    }
+
+    .contact-details-card {
+        flex-direction: column;
+        padding: 32px 24px;
+        gap: 28px;
+    }
+
+    .contact-details-left {
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        padding-bottom: 20px;
+    }
+
+    .contact-details-title {
+        font-size: 42px;
+        letter-spacing: 3px;
+    }
+
+    .contact-details-right {
+        gap: 20px;
+    }
+
+    .detail-row {
+        gap: 14px;
+    }
+
+    .detail-icon img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .detail-label {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .detail-value {
+        font-size: 13px;
+        line-height: 1.5;
+    }
 }

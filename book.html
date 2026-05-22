@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/339888103_617339846927129_7791889255149775750_n.jpg" />
+    <title>3KG Barbershop — BOOK NOW</title>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<<header>
+    <img class="logo" src="images/339888103_617339846927129_7791889255149775750_n.jpg" alt="logo">
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="services.html">SERVICES</a></li>
+            <li><a href="our_work.html">OUR WORK</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
+    <button class="book-btn">BOOK NOW</button>
+</header>
+
+<!-- ===== BOOKING SECTION ===== -->
+<section class="booking-section">
+
+    <!-- Left: Service Info -->
+    <div class="booking-service-card">
+        <p class="booking-service-eyebrow">SIGNATURE SERVICES</p>
+        <h2 class="booking-service-name">FADE AND TAPER</h2>
+        <p class="booking-service-desc">Our flagship service. A clean precision fade from skin to length, finished with sharp line-up work and hot towel prep. The standard every barber at 3KG is measured by.</p>
+        
+        <div class="booking-service-img">
+            <img src="images/hc1.jpg" alt="Fade and Taper">
+        </div>
+        
+        <div class="booking-service-bottom">
+            <div class="booking-price-wrap">
+                <span class="booking-price">P350</span>
+                <span class="booking-price-label">/SESSION</span>
+                <span class="booking-time">30 - 45 Minutes</span>
+            </div>
+            <button class="learn-more-btn">LEARN MORE</button>
+        </div>
+    </div>
+
+    <!-- Right: Booking Form -->
+    <div class="booking-form-card">
+        <div class="booking-form-header">
+            <h2 class="booking-form-title">BOOK NOW!</h2>
+            <p class="booking-form-sub">BOOK FASTER, LOOK SHARPER.</p>
+        </div>
+        
+        <form class="booking-form">
+            <div class="booking-form-row">
+                <div class="booking-form-group">
+                    <label for="booking-date">DATE</label>
+                    <div class="booking-input-wrap">
+                        <img src="icons/calendar.png" alt="Calendar" class="booking-input-icon" width="16" height="16">
+                        <input type="text" id="booking-date" name="date" placeholder="MM/DD/YYYY">
+                    </div>
+                </div>
+                <div class="booking-form-group">
+                    <label for="booking-time">TIME</label>
+                    <div class="booking-input-wrap">
+                        <img src="icons/clock.png" alt="Clock" class="booking-input-icon" width="16" height="16">
+                        <input type="text" id="booking-time" name="time" placeholder="TIME">
+                        <img src="images/chevron-icon.png" alt="Select" class="booking-input-chevron" width="12" height="12">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="booking-form-group full">
+                <label for="booking-details">DETAILS</label>
+                <div class="booking-textarea-wrap">
+                    <img src="icons/pen-tool.png" alt="Details" class="booking-input-icon" width="16" height="16">
+                    <textarea id="booking-details" name="details" placeholder="Tell us more ..." maxlength="500"></textarea>
+                </div>
+                <span class="booking-char-count">0/500</span>
+            </div>
+            
+            <div class="booking-form-group full">
+                <label for="booking-branch">PREFERRED BRANCH</label>
+                <div class="booking-input-wrap">
+                    <img src="icons/location.png" alt="Branch" class="booking-input-icon" width="16" height="16">
+                    <input type="text" id="booking-branch" name="branch" placeholder="Select Branch" readonly>
+                    <img src="images/chevron-icon.png" alt="Select" class="booking-input-chevron" width="12" height="12">
+                </div>
+            </div>
+            
+            <div class="booking-form-group full">
+                <label for="booking-visit">WALK IN/HOME VISIT?</label>
+                <div class="booking-input-wrap">
+                    <img src="icons/home.png" alt="Visit" class="booking-input-icon" width="16" height="16">
+                    <input type="text" id="booking-visit" name="visit" placeholder="Select an option" readonly>
+                    <img src="icons/home.png" alt="Select" class="booking-input-chevron" width="12" height="12">
+                </div>
+            </div>
+            
+            <button type="submit" class="booking-submit-btn">BOOK NOW</button>
+        </form>
+    </div>
+
+</section>
+
+<!-- ===== FOOTER ===== -->
+<<footer class="site-footer">
+    <span class="footer-logo">3KG</span>
+    <span class="footer-mid">EST. SINCE 2023 &nbsp;·&nbsp; NO FLUFF &nbsp;·&nbsp; ALL CRAFT</span>
+    <span class="footer-copy">3KG BARBERSHOP © 2026</span>
+</footer>
+
+</body>
+</html>

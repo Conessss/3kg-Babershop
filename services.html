@@ -9,20 +9,45 @@
     <title>3KG Barbershop — SERVICES</title>
 </head>
 <body>
-    
+
+<!-- ===== HEADER ===== -->
 <header>
     <img class="logo" src="images/339888103_617339846927129_7791889255149775750_n.jpg" alt="logo">
-    <nav>
+    
+    <!-- Desktop Nav -->
+    <nav class="desktop-nav">
         <ul>
             <li><a href="index.html">HOME</a></li>
             <li><a href="services.html" class="active">SERVICES</a></li>
             <li><a href="our_work.html">OUR WORK</a></li>
             <li><a href="about.html">ABOUT</a></li>
-            <li><a href="#">CONTACT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
         </ul>
     </nav>
-    <button class="book-btn">BOOK NOW</button>
+    
+    <a href="book.html" class="book-btn desktop-book">BOOK NOW</a>
+    
+    <!-- Hamburger Button -->
+    <button class="hamburger-btn" onclick="toggleMobileNav()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 </header>
+
+<!-- ===== MOBILE NAV DRAWER ===== -->
+<div class="mobile-nav-overlay" onclick="toggleMobileNav()"></div>
+<div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" onclick="toggleMobileNav()">×</button>
+    <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="services.html" class="active">SERVICES</a></li>
+        <li><a href="our_work.html">OUR WORK</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+    </ul>
+    <a href="book.html" class="book-btn">BOOK NOW</a>
+</div>
 
 <!-- ===== SERVICES SECTION ===== -->
 <section id="services" class="services-section">
@@ -37,12 +62,7 @@
     <!-- The Craft Label -->
     <div class="craft-label">
         <div class="craft-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
-                <path d="M8 12s1.5-2 4-2 4 2 4 2"/>
-                <path d="M9 9h.01M15 9h.01"/>
-                <path d="M7 16c1.5 1.5 8.5 1.5 10 0"/>
-            </svg>
+            <img src="images/craft-icon.png" alt="Craft" width="28" height="28">
         </div>
         <div>
             <h3 class="craft-title">THE CRAFT</h3>
@@ -62,8 +82,8 @@
             </div>
             <p class="featured-time">30 – 45 Minutes</p>
             <div class="featured-btns">
-                <button class="book-btn">BOOK NOW</button>
-                <button class="ourwork-btn">LEARN MORE</button>
+                <a href="book.html" class="book-btn">BOOK NOW</a>
+                <a href="#" class="ourwork-btn">LEARN MORE</a>
             </div>
         </div>
         <div class="featured-img-wrap">
@@ -77,10 +97,7 @@
         <div class="service-card">
             <div class="service-card-top">
                 <div class="service-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M6 2 3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/>
-                        <path d="M16 10a4 4 0 01-8 0"/>
-                    </svg>
+                    <img src="images/classic-icon.png" alt="Classic" width="22" height="22">
                 </div>
                 <h4 class="service-name">CLASSIC CUT</h4>
             </div>
@@ -91,9 +108,7 @@
         <div class="service-card">
             <div class="service-card-top">
                 <div class="service-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
-                    </svg>
+                    <img src="images/beard-icon.png" alt="Beard" width="22" height="22">
                 </div>
                 <h4 class="service-name">BEARD SHAPE</h4>
             </div>
@@ -104,10 +119,7 @@
         <div class="service-card">
             <div class="service-card-top">
                 <div class="service-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
-                        <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 001.97-1.67l1.38-7.33H6"/>
-                    </svg>
+                    <img src="images/cart-icon.png" alt="Package" width="22" height="22">
                 </div>
                 <h4 class="service-name">CUT + BEARD</h4>
             </div>
@@ -118,10 +130,7 @@
         <div class="service-card">
             <div class="service-card-top">
                 <div class="service-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
-                        <polyline points="9 22 9 12 15 12 15 22"/>
-                    </svg>
+                    <img src="images/treatment-icon.png" alt="Treatment" width="22" height="22">
                 </div>
                 <h4 class="service-name">HAIR TREATMENT</h4>
             </div>
@@ -131,7 +140,9 @@
 
         <div class="service-card">
             <div class="service-card-top">
-                <div class="service-icon">🔥</div>
+                <div class="service-icon">
+                    <img src="images/fire-icon.png" alt="Shave" width="22" height="22">
+                </div>
                 <h4 class="service-name">HOT TOWEL SHAVE</h4>
             </div>
             <p class="service-desc">Full traditional hot shave. Pre-shave oil, hot towels, straight razor — old school luxury.</p>
@@ -141,10 +152,7 @@
         <div class="service-card">
             <div class="service-card-top">
                 <div class="service-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
-                        <polyline points="17 6 23 6 23 12"/>
-                    </svg>
+                    <img src="images/scissors-icon.png" alt="Trim" width="22" height="22">
                 </div>
                 <h4 class="service-name">TRIM ONLY</h4>
             </div>
@@ -162,16 +170,26 @@
             <p class="cta-sub">Walk-ins and appointments are welcome.</p>
         </div>
         <div class="cta-btns">
-            <button class="book-btn">BOOK NOW</button>
-            <button class="ourwork-btn">OUR WORK</button>
+            <a href="book.html" class="book-btn">BOOK NOW</a>
+            <a href="our_work.html" class="ourwork-btn">OUR WORK</a>
         </div>
     </div>
 
 </section>
+
+<!-- ===== FOOTER ===== -->
 <footer class="site-footer">
     <span class="footer-logo">3KG</span>
     <span class="footer-mid">EST. SINCE 2023 &nbsp;·&nbsp; NO FLUFF &nbsp;·&nbsp; ALL CRAFT</span>
     <span class="footer-copy">3KG BARBERSHOP © 2026</span>
 </footer>
+
+<script>
+    function toggleMobileNav() {
+        document.getElementById('mobileNav').classList.toggle('active');
+        document.querySelector('.mobile-nav-overlay').classList.toggle('active');
+    }
+</script>
+
 </body>
 </html>
