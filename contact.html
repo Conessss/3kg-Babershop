@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/339888103_617339846927129_7791889255149775750_n.jpg" />
+    <title>3KG Barbershop — CONTACT</title>
+    <style>
+        /* ===== CONTACT HERO ===== */
+        .contact-hero {
+            padding: 80px 120px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-eyebrow {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 15px;
+            color: var(--red);
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+        }
+
+        .contact-hero-title {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 110px;
+            color: var(--cream);
+            line-height: 0.9;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .contact-hero-title span {
+            color: var(--red);
+        }
+
+        .contact-hero-sub {
+            font-family: sans-serif;
+            font-size: 14px;
+            color: rgba(212, 201, 168, 0.6);
+            line-height: 1.8;
+            letter-spacing: 0.5px;
+            max-width: 420px;
+        }
+
+        .contact-hero-watermark {
+            position: absolute;
+            right: -20px;
+            top: 20px;
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 340px;
+            color: rgba(192, 57, 43, 0.06);
+            line-height: 1;
+            pointer-events: none;
+            user-select: none;
+            letter-spacing: -10px;
+        }
+
+        /* ===== DIVIDER ===== */
+        .divider {
+            height: 1px;
+            background: rgba(255,255,255,0.08);
+            margin: 0 120px;
+        }
+
+        /* ===== CONTACT BODY ===== */
+        .contact-body {
+            padding: 70px 120px 80px;
+            display: flex;
+            gap: 60px;
+            align-items: flex-start;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-body::before {
+            content: "3KG";
+            position: absolute;
+            right: -40px;
+            top: 40px;
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 380px;
+            color: rgba(192, 57, 43, 0.07);
+            line-height: 1;
+            pointer-events: none;
+            user-select: none;
+            letter-spacing: -10px;
+        }
+
+        /* === Left: Info === */
+        .contact-info {
+            flex: 1;
+            max-width: 420px;
+        }
+
+        .contact-info-eyebrow {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 15px;
+            color: var(--red);
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+        }
+
+        .contact-info-title {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 64px;
+            color: var(--cream);
+            letter-spacing: 3px;
+            line-height: 1;
+            margin-bottom: 36px;
+        }
+
+        .contact-info-title span {
+            color: white;
+        }
+
+        .contact-detail-group {
+            margin-bottom: 28px;
+            padding-bottom: 28px;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+
+        .contact-detail-group:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .contact-detail-label {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 13px;
+            color: var(--red);
+            letter-spacing: 4px;
+            margin-bottom: 6px;
+        }
+
+        .contact-detail-value {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 22px;
+            color: var(--cream);
+            letter-spacing: 2px;
+            line-height: 1.4;
+        }
+
+        .contact-detail-sub {
+            font-family: sans-serif;
+            font-size: 12px;
+            color: rgba(212, 201, 168, 0.45);
+            letter-spacing: 1.5px;
+            margin-top: 4px;
+        }
+
+        /* === Right: Form === */
+        .contact-form-wrap {
+            flex: 1;
+            background: #1a1512;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 12px;
+            padding: 40px 40px 44px;
+            position: relative;
+        }
+
+        .contact-form-wrap::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--red);
+            border-radius: 12px 0 0 12px;
+        }
+
+        .form-badge {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 13px;
+            color: var(--red);
+            letter-spacing: 4px;
+            margin-bottom: 8px;
+        }
+
+        .form-title {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 42px;
+            color: var(--cream);
+            letter-spacing: 3px;
+            margin-bottom: 28px;
+            line-height: 1;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            margin-bottom: 16px;
+        }
+
+        .form-group.half {
+            margin-bottom: 0;
+        }
+
+        .form-label {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 13px;
+            color: rgba(212, 201, 168, 0.5);
+            letter-spacing: 3px;
+            margin-bottom: 8px;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 6px;
+            color: var(--cream);
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 18px;
+            letter-spacing: 1.5px;
+            padding: 12px 16px;
+            outline: none;
+            transition: border-color 0.2s;
+            width: 100%;
+        }
+
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: rgba(212, 201, 168, 0.2);
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            border-color: var(--red);
+        }
+
+        .form-select {
+            appearance: none;
+            cursor: pointer;
+        }
+
+        .form-select option {
+            background: #1a1512;
+            color: var(--cream);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        .form-submit {
+            margin-top: 8px;
+            width: 100%;
+        }
+
+        .form-submit .book-btn {
+            width: 100%;
+            font-size: 22px;
+            padding: 14px 28px;
+            border-radius: 8px;
+        }
+
+        /* ===== HOURS SECTION ===== */
+        .contact-hours {
+            background-color: var(--red);
+            padding: 60px 120px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 60px;
+        }
+
+        .hours-left h2 {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 64px;
+            color: white;
+            letter-spacing: 3px;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .hours-left p {
+            font-family: sans-serif;
+            font-size: 13px;
+            color: rgba(255,255,255,0.7);
+            letter-spacing: 2px;
+        }
+
+        .hours-list {
+            flex: 1;
+            max-width: 420px;
+        }
+
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .hours-row:last-child {
+            border-bottom: none;
+        }
+
+        .hours-day {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 20px;
+            color: white;
+            letter-spacing: 2px;
+        }
+
+        .hours-time {
+            font-family: sans-serif;
+            font-size: 13px;
+            color: rgba(255,255,255,0.8);
+            letter-spacing: 1.5px;
+        }
+
+        .hours-time.closed {
+            color: rgba(255,255,255,0.35);
+        }
+
+        /* ===== MAP PLACEHOLDER ===== */
+        .contact-map {
+            margin: 0 120px 80px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.07);
+            height: 280px;
+            background: #1a1512;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .map-label {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 22px;
+            color: rgba(212, 201, 168, 0.25);
+            letter-spacing: 5px;
+        }
+
+        .map-pin {
+            position: absolute;
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 14px;
+            color: var(--red);
+            letter-spacing: 3px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .map-pin::before {
+            content: "📍";
+            display: block;
+            font-size: 32px;
+            margin-bottom: 6px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+    <img class="logo" src="images/339888103_617339846927129_7791889255149775750_n.jpg" alt="logo">
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="services.html">SERVICES</a></li>
+            <li><a href="our_work.html">OUR WORK</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html" class="active">CONTACT</a></li>
+        </ul>
+    </nav>
+    <button class="book-btn">BOOK NOW</button>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="contact-hero">
+    <p class="contact-eyebrow">GET IN TOUCH</p>
+    <h1 class="contact-hero-title">LET'S<br><span>TALK.</span></h1>
+    <p class="contact-hero-sub">Have a question, a booking, or just want to know more? Hit us up — we'll get back to you clean and quick.</p>
+    <div class="contact-hero-watermark">3KG</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===== CONTACT BODY ===== -->
+<section class="contact-body">
+
+    <!-- Left: Info -->
+    <div class="contact-info">
+        <p class="contact-info-eyebrow">FIND US.</p>
+        <h2 class="contact-info-title">CONTACT <span>INFO.</span></h2>
+
+        <div class="contact-detail-group">
+            <p class="contact-detail-label">ADDRESS</p>
+            <p class="contact-detail-value">123 Barber Street<br>Quezon City, PH</p>
+            <p class="contact-detail-sub">Near the corner — you'll know it by the vibe.</p>
+        </div>
+
+        <div class="contact-detail-group">
+            <p class="contact-detail-label">PHONE</p>
+            <p class="contact-detail-value">+63 912 345 6789</p>
+            <p class="contact-detail-sub">Call or text — we're quick to respond.</p>
+        </div>
+
+        <div class="contact-detail-group">
+            <p class="contact-detail-label">EMAIL</p>
+            <p class="contact-detail-value">3KG@BARBERSHOP.PH</p>
+            <p class="contact-detail-sub">For bookings, inquiries, and collabs.</p>
+        </div>
+
+        <div class="contact-detail-group">
+            <p class="contact-detail-label">SOCIALS</p>
+            <p class="contact-detail-value">@3KGBARBERSHOP</p>
+            <p class="contact-detail-sub">Instagram · Facebook · TikTok</p>
+        </div>
+    </div>
+
+    <!-- Right: Form -->
+    <div class="contact-form-wrap">
+        <p class="form-badge">SEND A MESSAGE</p>
+        <h3 class="form-title">BOOK OR INQUIRE.</h3>
+
+        <div class="form-row">
+            <div class="form-group half">
+                <label class="form-label">FIRST NAME</label>
+                <input class="form-input" type="text" placeholder="JUAN">
+            </div>
+            <div class="form-group half">
+                <label class="form-label">LAST NAME</label>
+                <input class="form-input" type="text" placeholder="DELA CRUZ">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">PHONE NUMBER</label>
+            <input class="form-input" type="tel" placeholder="+63 900 000 0000">
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">SERVICE</label>
+            <select class="form-select">
+                <option value="" disabled selected>SELECT A SERVICE</option>
+                <option>FADE AND TAPER — ₱350</option>
+                <option>CLASSIC CUT — ₱280</option>
+                <option>BEARD SHAPE — ₱250</option>
+                <option>CUT + BEARD — ₱440</option>
+                <option>HAIR TREATMENT — ₱320</option>
+                <option>HOT TOWEL SHAVE — ₱420</option>
+                <option>TRIM ONLY — ₱100</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">MESSAGE (OPTIONAL)</label>
+            <textarea class="form-textarea" placeholder="ANY REQUESTS OR QUESTIONS..."></textarea>
+        </div>
+
+        <div class="form-submit">
+            <button class="book-btn">SEND IT →</button>
+        </div>
+    </div>
+
+</section>
+
+<!-- ===== HOURS ===== -->
+<section class="contact-hours">
+    <div class="hours-left">
+        <h2>SHOP<br>HOURS.</h2>
+        <p>Walk-ins welcome.<br>Appointments preferred.</p>
+    </div>
+    <div class="hours-list">
+        <div class="hours-row">
+            <span class="hours-day">MONDAY – FRIDAY</span>
+            <span class="hours-time">9:00 AM – 8:00 PM</span>
+        </div>
+        <div class="hours-row">
+            <span class="hours-day">SATURDAY</span>
+            <span class="hours-time">8:00 AM – 9:00 PM</span>
+        </div>
+        <div class="hours-row">
+            <span class="hours-day">SUNDAY</span>
+            <span class="hours-time">9:00 AM – 6:00 PM</span>
+        </div>
+        <div class="hours-row">
+            <span class="hours-day">HOLIDAYS</span>
+            <span class="hours-time closed">CLOSED</span>
+        </div>
+    </div>
+</section>
+
+<!-- ===== MAP PLACEHOLDER ===== -->
+<div class="contact-map">
+    <div class="map-pin">3KG BARBERSHOP<br>QUEZON CITY</div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+    <span class="footer-logo">3KG</span>
+    <span class="footer-mid">EST. SINCE 2023 &nbsp;·&nbsp; NO FLUFF &nbsp;·&nbsp; ALL CRAFT</span>
+    <span class="footer-copy">3KG BARBERSHOP © 2026</span>
+</footer>
+
+</body>
+</html>

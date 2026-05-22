@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/339888103_617339846927129_7791889255149775750_n.jpg" />
+    <title>3KG Barbershop — ABOUT</title>
+    <style>
+        /* ===== ABOUT HERO ===== */
+        .about-hero {
+            padding: 80px 120px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-eyebrow {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 15px;
+            color: var(--red);
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+        }
+
+        .about-hero-title {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 110px;
+            color: var(--cream);
+            line-height: 0.9;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .about-hero-title span {
+            color: var(--red);
+        }
+
+        .about-hero-sub {
+            font-family: sans-serif;
+            font-size: 14px;
+            color: rgba(212, 201, 168, 0.6);
+            line-height: 1.8;
+            letter-spacing: 0.5px;
+            max-width: 420px;
+        }
+
+        .about-hero-watermark {
+            position: absolute;
+            right: -20px;
+            top: 20px;
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 340px;
+            color: rgba(192, 57, 43, 0.06);
+            line-height: 1;
+            pointer-events: none;
+            user-select: none;
+            letter-spacing: -10px;
+        }
+
+        /* ===== DIVIDER ===== */
+        .divider {
+            height: 1px;
+            background: rgba(255,255,255,0.08);
+            margin: 0 120px;
+        }
+
+        /* ===== STORY SECTION (red bg) ===== */
+        .about-story {
+            background-color: var(--red);
+            padding: 70px 120px;
+        }
+
+        .about-story-inner {
+            max-width: 860px;
+        }
+
+        .story-eyebrow {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 13px;
+            color: rgba(255,255,255,0.55);
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+        }
+
+        .story-body {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 20px;
+            color: white;
+            letter-spacing: 2px;
+            line-height: 1.65;
+            margin-bottom: 24px;
+        }
+
+        /* ===== VALUES SECTION ===== */
+        .about-values {
+            padding: 80px 120px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-values::before {
+            content: "3KG";
+            position: absolute;
+            right: -40px;
+            top: 40px;
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 380px;
+            color: rgba(192, 57, 43, 0.07);
+            line-height: 1;
+            pointer-events: none;
+            user-select: none;
+            letter-spacing: -10px;
+        }
+
+        .values-eyebrow {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 15px;
+            color: var(--red);
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+        }
+
+        .values-title {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 80px;
+            color: var(--cream);
+            letter-spacing: 3px;
+            line-height: 1;
+            margin-bottom: 50px;
+        }
+
+        .values-title span {
+            color: white;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 80px;
+        }
+
+        .value-card {
+            background: #1a1512;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 10px;
+            padding: 32px 28px;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .value-card:hover {
+            border-color: var(--red);
+            transform: translateY(-3px);
+        }
+
+        .value-number {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 48px;
+            color: var(--red);
+            letter-spacing: 2px;
+            line-height: 1;
+            margin-bottom: 12px;
+            opacity: 0.6;
+        }
+
+        .value-name {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 28px;
+            color: var(--cream);
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        }
+
+        .value-desc {
+            font-family: sans-serif;
+            font-size: 13px;
+            color: rgba(212, 201, 168, 0.55);
+            line-height: 1.75;
+        }
+
+        /* ===== TEAM SECTION ===== */
+        .about-team {
+            padding: 0 120px 80px;
+        }
+
+        .team-header {
+            margin-bottom: 40px;
+            padding-top: 60px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .team-eyebrow {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 15px;
+            color: var(--red);
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+        }
+
+        .team-title {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 80px;
+            color: var(--cream);
+            letter-spacing: 3px;
+            line-height: 1;
+        }
+
+        .team-title span {
+            color: white;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .team-card {
+            background: #1a1512;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .team-card:hover {
+            border-color: var(--red);
+            transform: translateY(-3px);
+        }
+
+        .team-img-wrap {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+        }
+
+        .team-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.85) contrast(1.1) grayscale(0.3);
+            transition: transform 0.4s ease, filter 0.3s;
+        }
+
+        .team-card:hover .team-img-wrap img {
+            transform: scale(1.05);
+            filter: brightness(0.75) contrast(1.15) grayscale(0);
+        }
+
+        .team-info {
+            padding: 20px 22px 22px;
+        }
+
+        .team-role {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 12px;
+            color: var(--red);
+            letter-spacing: 4px;
+            margin-bottom: 4px;
+        }
+
+        .team-name {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 26px;
+            color: var(--cream);
+            letter-spacing: 2px;
+        }
+
+        .team-spec {
+            font-family: sans-serif;
+            font-size: 12px;
+            color: rgba(212, 201, 168, 0.45);
+            letter-spacing: 1.5px;
+            margin-top: 6px;
+        }
+
+        /* ===== ABOUT CTA ===== */
+        .about-cta {
+            padding: 70px 120px 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255,255,255,0.07);
+        }
+
+        .about-cta-title {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 72px;
+            color: var(--cream);
+            letter-spacing: 3px;
+            line-height: 1;
+        }
+
+        .about-cta-title.red {
+            color: var(--red);
+        }
+
+        .about-cta-sub {
+            font-family: sans-serif;
+            font-size: 14px;
+            color: rgba(212, 201, 168, 0.5);
+            letter-spacing: 1.5px;
+            margin-top: 10px;
+        }
+
+        .about-cta-btns {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+    <img class="logo" src="images/339888103_617339846927129_7791889255149775750_n.jpg" alt="logo">
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="services.html">SERVICES</a></li>
+            <li><a href="our_work.html">OUR WORK</a></li>
+            <li><a href="about.html" class="active">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
+    <button class="book-btn">BOOK NOW</button>
+</header>
+
+<!-- ===== ABOUT HERO ===== -->
+<section class="about-hero">
+    <p class="about-eyebrow">THE PORTFOLIO</p>
+    <h1 class="about-hero-title">THE SHOP<br><span>BEHIND</span><br>THE CUT.</h1>
+    <p class="about-hero-sub">Built on the corner with clippers, craft, and conviction. 3KG isn't just a barbershop — it's a legacy.</p>
+    <div class="about-hero-watermark">3KG</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===== STORY SECTION ===== -->
+<section class="about-story">
+    <div class="about-story-inner">
+        <p class="story-eyebrow">OUR STORY</p>
+        <p class="story-body">3KG BARBERSHOP STARTED IN 2023 WITH ONE CHAIR, ONE MISSION, AND ZERO COMPROMISES. WHAT BEGAN AS A NEIGHBORHOOD SPOT QUICKLY BECAME THE GO-TO FOR MEN WHO TAKE THEIR LOOK SERIOUSLY.</p>
+        <p class="story-body">EVERY BARBER AT 3KG IS TRAINED TO THE SAME STANDARD — NOT JUST IN TECHNIQUE, BUT IN THE WAY THEY TREAT EVERY CLIENT WHO SITS IN THAT CHAIR. BECAUSE A GREAT CUT IS MORE THAN JUST HAIR. IT'S CONFIDENCE. IT'S IDENTITY. IT'S CRAFT.</p>
+    </div>
+</section>
+
+<!-- ===== VALUES SECTION ===== -->
+<section class="about-values">
+    <p class="values-eyebrow">WHAT DRIVES US.</p>
+    <h2 class="values-title">OUR <span>VALUES.</span></h2>
+
+    <div class="values-grid">
+        <div class="value-card">
+            <div class="value-number">01</div>
+            <h4 class="value-name">PRECISION</h4>
+            <p class="value-desc">Every line, every fade, every taper is executed with the same level of care. We don't rush. We don't cut corners. We cut hair — the right way.</p>
+        </div>
+        <div class="value-card">
+            <div class="value-number">02</div>
+            <h4 class="value-name">CRAFT</h4>
+            <p class="value-desc">Barbering is an art form. Our barbers study the trade, practice the fundamentals, and push what's possible behind the chair every single day.</p>
+        </div>
+        <div class="value-card">
+            <div class="value-number">03</div>
+            <h4 class="value-name">COMMUNITY</h4>
+            <p class="value-desc">3KG is more than a shop — it's a place where the neighborhood comes together. Built here, run here, for the people who keep this corner alive.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TEAM SECTION ===== -->
+<section class="about-team">
+    <div class="team-header">
+        <p class="team-eyebrow">THE PEOPLE BEHIND THE CUTS.</p>
+        <h2 class="team-title">MEET THE <span>TEAM.</span></h2>
+    </div>
+    <div class="team-grid">
+        <div class="team-card">
+            <div class="team-img-wrap">
+                <img src="images/339888103_617339846927129_7791889255149775750_n.jpg" alt="Barber 1">
+            </div>
+            <div class="team-info">
+                <p class="team-role">FOUNDER · HEAD BARBER</p>
+                <h4 class="team-name">KUYA G</h4>
+                <p class="team-spec">Fades · Tapers · Classic Cuts</p>
+            </div>
+        </div>
+        <div class="team-card">
+            <div class="team-img-wrap">
+                <img src="images/339888103_617339846927129_7791889255149775750_n.jpg" alt="Barber 2">
+            </div>
+            <div class="team-info">
+                <p class="team-role">SENIOR BARBER</p>
+                <h4 class="team-name">KUYA K</h4>
+                <p class="team-spec">Beard Sculpting · Hot Towel Shave</p>
+            </div>
+        </div>
+        <div class="team-card">
+            <div class="team-img-wrap">
+                <img src="images/339888103_617339846927129_7791889255149775750_n.jpg" alt="Barber 3">
+            </div>
+            <div class="team-info">
+                <p class="team-role">BARBER</p>
+                <h4 class="team-name">KUYA J</h4>
+                <p class="team-spec">Fades · Hair Treatments</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<div class="about-cta">
+    <div>
+        <h2 class="about-cta-title">READY TO SIT</h2>
+        <h2 class="about-cta-title red">IN THE CHAIR?</h2>
+        <p class="about-cta-sub">Walk-ins and appointments are welcome.</p>
+    </div>
+    <div class="about-cta-btns">
+        <button class="book-btn">BOOK NOW</button>
+        <button class="ourwork-btn">OUR WORK</button>
+    </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+    <span class="footer-logo">3KG</span>
+    <span class="footer-mid">EST. SINCE 2023 &nbsp;·&nbsp; NO FLUFF &nbsp;·&nbsp; ALL CRAFT</span>
+    <span class="footer-copy">3KG BARBERSHOP © 2026</span>
+</footer>
+
+</body>
+</html>
