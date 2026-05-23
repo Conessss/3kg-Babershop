@@ -2283,3 +2283,27 @@ nav ul li a.active {
         padding: 14px;
     }
 }
+
+.hamburger-btn {
+    display: none;  /* Hidden on desktop */
+}
+
+@media (max-width: 768px) {
+    .hamburger-btn {
+        display: flex;  /* Shows on mobile */
+        flex-direction: column;
+        gap: 5px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+    }
+
+    .hamburger-btn span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background-color: var(--cream);
+        transition: all 0.3s;
+    }
+}
