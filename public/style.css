@@ -2169,3 +2169,117 @@ nav ul li a.active {
     filter: invert(0.7);
     cursor: pointer;
 }
+
+/* ===========================
+   BOOKING PAGE MEDIA QUERIES
+   =========================== */
+
+@media (max-width: 768px) {
+
+    /* ===== BOOKING SECTION ===== */
+    .booking-section {
+        grid-template-columns: 1fr;
+        padding: 40px 24px 60px;
+        gap: 24px;
+    }
+
+    /* ===== LEFT: SERVICE CARD ===== */
+    .booking-service-card {
+        padding: 28px 24px;
+    }
+
+    .booking-service-eyebrow {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .booking-service-name {
+        font-size: 28px;
+        letter-spacing: 2px;
+    }
+
+    .booking-service-desc {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .booking-service-img {
+        height: 240px;
+        margin-bottom: 20px;
+    }
+
+    .booking-price {
+        font-size: 32px;
+    }
+
+    .booking-price-label {
+        font-size: 9px;
+    }
+
+    .booking-time {
+        font-size: 10px;
+    }
+
+    .learn-more-btn {
+        font-size: 12px;
+        padding: 8px 20px;
+    }
+
+    /* ===== RIGHT: FORM CARD ===== */
+    .booking-form-card {
+        padding: 28px 24px;
+    }
+
+    .booking-form-title {
+        font-size: 36px;
+        letter-spacing: 4px;
+    }
+
+    .booking-form-sub {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    /* ===== FORM ROWS ===== */
+    .booking-form-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .booking-form-group {
+        gap: 6px;
+    }
+
+    .booking-form-group label {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .booking-input-wrap {
+        padding: 10px 12px;
+    }
+
+    .booking-input-wrap input,
+    .booking-input-wrap select {
+        font-size: 12px;
+    }
+
+    .booking-textarea-wrap {
+        padding: 10px 12px;
+    }
+
+    .booking-textarea-wrap textarea {
+        font-size: 12px;
+        min-height: 60px;
+    }
+
+    .booking-char-count {
+        font-size: 9px;
+    }
+
+    .booking-submit-btn {
+        font-size: 16px;
+        letter-spacing: 3px;
+        padding: 14px;
+    }
+}
