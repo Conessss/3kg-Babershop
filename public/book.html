@@ -10,7 +10,6 @@
 </head>
 <body>
 
-<!-- ===== HEADER ===== -->
 <<header>
     <img class="logo" src="images/339888103_617339846927129_7791889255149775750_n.jpg" alt="logo">
     <nav>
@@ -25,10 +24,8 @@
     <button class="book-btn">BOOK NOW</button>
 </header>
 
-<!-- ===== BOOKING SECTION ===== -->
 <section class="booking-section">
 
-    <!-- Left: Service Info -->
     <div class="booking-service-card">
         <p class="booking-service-eyebrow">SIGNATURE SERVICES</p>
         <h2 class="booking-service-name">FADE AND TAPER</h2>
@@ -48,28 +45,39 @@
         </div>
     </div>
 
-    <!-- Right: Booking Form -->
     <div class="booking-form-card">
         <div class="booking-form-header">
             <h2 class="booking-form-title">BOOK NOW!</h2>
             <p class="booking-form-sub">BOOK FASTER, LOOK SHARPER.</p>
         </div>
         
-        <form class="booking-form">
+        <form class="booking-form" id="bookingForm">
+            <div class="booking-form-row">
+                <div class="booking-form-group">
+                    <label for="booking-name">NAME</label>
+                    <div class="booking-input-wrap">
+                        <input type="text" id="booking-name" name="name" placeholder="Your name" required>
+                    </div>
+                </div>
+                <div class="booking-form-group">
+                    <label for="booking-phone">PHONE</label>
+                    <div class="booking-input-wrap">
+                        <input type="text" id="booking-phone" name="phone" placeholder="Phone number">
+                    </div>
+                </div>
+            </div>
+            
             <div class="booking-form-row">
                 <div class="booking-form-group">
                     <label for="booking-date">DATE</label>
                     <div class="booking-input-wrap">
-                        <img src="icons/calendar.png" alt="Calendar" class="booking-input-icon" width="16" height="16">
-                        <input type="text" id="booking-date" name="date" placeholder="MM/DD/YYYY">
+                        <input type="date" id="booking-date" name="date" required>
                     </div>
                 </div>
                 <div class="booking-form-group">
                     <label for="booking-time">TIME</label>
                     <div class="booking-input-wrap">
-                        <img src="icons/clock.png" alt="Clock" class="booking-input-icon" width="16" height="16">
-                        <input type="text" id="booking-time" name="time" placeholder="TIME">
-                        <img src="images/chevron-icon.png" alt="Select" class="booking-input-chevron" width="12" height="12">
+                        <input type="time" id="booking-time" name="time" required>
                     </div>
                 </div>
             </div>
@@ -77,7 +85,6 @@
             <div class="booking-form-group full">
                 <label for="booking-details">DETAILS</label>
                 <div class="booking-textarea-wrap">
-                    <img src="icons/pen-tool.png" alt="Details" class="booking-input-icon" width="16" height="16">
                     <textarea id="booking-details" name="details" placeholder="Tell us more ..." maxlength="500"></textarea>
                 </div>
                 <span class="booking-char-count">0/500</span>
@@ -86,18 +93,22 @@
             <div class="booking-form-group full">
                 <label for="booking-branch">PREFERRED BRANCH</label>
                 <div class="booking-input-wrap">
-                    <img src="icons/location.png" alt="Branch" class="booking-input-icon" width="16" height="16">
-                    <input type="text" id="booking-branch" name="branch" placeholder="Select Branch" readonly>
-                    <img src="images/chevron-icon.png" alt="Select" class="booking-input-chevron" width="12" height="12">
+                    <select id="booking-branch" name="branch" required>
+                        <option value="">Select Branch</option>
+                        <option value="Main Branch">Main Branch</option>
+                        <option value="Downtown">Downtown</option>
+                    </select>
                 </div>
             </div>
             
             <div class="booking-form-group full">
                 <label for="booking-visit">WALK IN/HOME VISIT?</label>
                 <div class="booking-input-wrap">
-                    <img src="icons/home.png" alt="Visit" class="booking-input-icon" width="16" height="16">
-                    <input type="text" id="booking-visit" name="visit" placeholder="Select an option" readonly>
-                    <img src="icons/home.png" alt="Select" class="booking-input-chevron" width="12" height="12">
+                    <select id="booking-visit" name="visitType" required>
+                        <option value="">Select an option</option>
+                        <option value="Walk In">Walk In</option>
+                        <option value="Home Visit">Home Visit</option>
+                    </select>
                 </div>
             </div>
             
@@ -107,12 +118,47 @@
 
 </section>
 
-<!-- ===== FOOTER ===== -->
 <<footer class="site-footer">
     <span class="footer-logo">3KG</span>
     <span class="footer-mid">EST. SINCE 2023 &nbsp;·&nbsp; NO FLUFF &nbsp;·&nbsp; ALL CRAFT</span>
     <span class="footer-copy">3KG BARBERSHOP © 2026</span>
 </footer>
+
+<script>
+document.getElementById('bookingForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const bookingData = {
+        name: document.getElementById('booking-name').value,
+        phone: document.getElementById('booking-phone').value,
+        date: document.getElementById('booking-date').value,
+        time: document.getElementById('booking-time').value,
+        service: 'Fade and Taper',
+        branch: document.getElementById('booking-branch').value,
+        visitType: document.getElementById('booking-visit').value,
+        details: document.getElementById('booking-details').value
+    };
+    
+    try {
+        const response = await fetch('/api/bookings', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(bookingData)
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            alert('Booking saved to database!');
+            this.reset();
+        } else {
+            alert('Error: ' + result.error);
+        }
+    } catch (error) {
+        alert('Failed to save: ' + error.message);
+    }
+});
+</script>
 
 </body>
 </html>

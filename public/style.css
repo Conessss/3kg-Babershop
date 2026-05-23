@@ -2132,3 +2132,40 @@ nav ul li a.active {
         line-height: 1.5;
     }
 }
+
+/* Booking Form Select Styling */
+.booking-input-wrap select {
+    background: transparent;
+    border: none;
+    color: var(--cream);
+    font-family: sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    width: 100%;
+    outline: none;
+    cursor: pointer;
+}
+
+.booking-input-wrap select option {
+    background: #1a1512;
+    color: var(--cream);
+}
+
+/* Date and Time Input Styling */
+.booking-input-wrap input[type="date"],
+.booking-input-wrap input[type="time"] {
+    background: transparent;
+    border: none;
+    color: var(--cream);
+    font-family: sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    width: 100%;
+    outline: none;
+}
+
+.booking-input-wrap input[type="date"]::-webkit-calendar-picker-indicator,
+.booking-input-wrap input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(0.7);
+    cursor: pointer;
+}
