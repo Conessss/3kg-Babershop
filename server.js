@@ -30,6 +30,7 @@ const bookingSchema = new mongoose.Schema({
     time: String,
     service: String,
     branch: String,
+    address: String,        // ← ADDED: for Home Visit bookings
     visitType: String,
     details: String,
     createdAt: { type: Date, default: Date.now }
