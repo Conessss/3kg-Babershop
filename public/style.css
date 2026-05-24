@@ -138,6 +138,7 @@ nav ul li a:hover {
     border-radius: 8px;
     cursor: pointer;
     transition: background 0.2s;
+    text-decoration: none;
 }
 
 .ourwork-btn:hover {
@@ -1347,6 +1348,8 @@ nav ul li a.active {
         padding: 10px 20px;
         letter-spacing: 1px;
         text-decoration: none;
+        display: inline-block;   /* ADD THIS */
+        white-space: nowrap;
     }
 
     /* ===== MOBILE NAV DRAWER ===== */
@@ -1419,6 +1422,8 @@ nav ul li a.active {
         margin-top: 32px;
         width: 100%;
         text-align: center;
+        display: block;          
+        box-sizing: border-box;
     }
 
     /* ===== HERO SECTION ===== */
@@ -1737,7 +1742,7 @@ nav ul li a.active {
     .cta-btns .book-btn,
     .cta-btns .ourwork-btn {
         font-size: 14px;
-        padding: 10px 24px;
+        padding: 10px 24px;        
     }
 }
 

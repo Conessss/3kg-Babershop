@@ -11,7 +11,7 @@
 <body>
 
 <!-- ===== HEADER ===== -->
-<<header>
+<header>
     <img class="logo" src="images/339888103_617339846927129_7791889255149775750_n.jpg" alt="logo">
     
     <!-- Desktop Nav -->
@@ -116,17 +116,6 @@
             </div>
             
             <div class="booking-form-group full">
-                <label for="booking-branch">PREFERRED BRANCH</label>
-                <div class="booking-input-wrap">
-                    <select id="booking-branch" name="branch" required>
-                        <option value="">Select Branch</option>
-                        <option value="Main Branch">Main Branch</option>
-                        <option value="Downtown">Downtown</option>
-                    </select>
-                </div>
-            </div>
-            
-            <div class="booking-form-group full">
                 <label for="booking-visit">WALK IN/HOME VISIT?</label>
                 <div class="booking-input-wrap">
                     <select id="booking-visit" name="visitType" required>
@@ -137,13 +126,33 @@
                 </div>
             </div>
             
+            <!-- Branch Selection (shown for Walk In) -->
+            <div class="booking-form-group full" id="branchField">
+                <label for="booking-branch">PREFERRED BRANCH</label>
+                <div class="booking-input-wrap">
+                    <select id="booking-branch" name="branch">
+                        <option value="">Select Branch</option>
+                        <option value="Main Branch">Main Branch</option>
+                        <option value="Downtown">Downtown</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Address Input (shown for Home Visit) -->
+            <div class="booking-form-group full" id="addressField" style="display: none;">
+                <label for="booking-address">YOUR ADDRESS</label>
+                <div class="booking-input-wrap">
+                    <input type="text" id="booking-address" name="address" placeholder="Enter your full address">
+                </div>
+            </div>
+
             <button type="submit" class="booking-submit-btn">BOOK NOW</button>
         </form>
     </div>
 
 </section>
 
-<<footer class="site-footer">
+<footer class="site-footer">
     <span class="footer-logo">3KG</span>
     <span class="footer-mid">EST. SINCE 2023 &nbsp;·&nbsp; NO FLUFF &nbsp;·&nbsp; ALL CRAFT</span>
     <span class="footer-copy">3KG BARBERSHOP © 2026</span>
@@ -155,8 +164,30 @@ function toggleMobileNav() {
     document.querySelector('.mobile-nav-overlay').classList.toggle('active');
 }
 
+// Toggle between Branch and Address fields based on visit type
+document.getElementById('booking-visit').addEventListener('change', function() {
+    const branchField = document.getElementById('branchField');
+    const addressField = document.getElementById('addressField');
+    const branchSelect = document.getElementById('booking-branch');
+    const addressInput = document.getElementById('booking-address');
+    
+    if (this.value === 'Home Visit') {
+        branchField.style.display = 'none';
+        addressField.style.display = 'block';
+        branchSelect.removeAttribute('required');
+        addressInput.setAttribute('required', 'required');
+    } else {
+        branchField.style.display = 'block';
+        addressField.style.display = 'none';
+        branchSelect.setAttribute('required', 'required');
+        addressInput.removeAttribute('required');
+    }
+});
+
 document.getElementById('bookingForm').addEventListener('submit', async function(e) {
     e.preventDefault();
+    
+    const visitType = document.getElementById('booking-visit').value;
     
     const bookingData = {
         name: document.getElementById('booking-name').value,
@@ -164,10 +195,16 @@ document.getElementById('bookingForm').addEventListener('submit', async function
         date: document.getElementById('booking-date').value,
         time: document.getElementById('booking-time').value,
         service: 'Fade and Taper',
-        branch: document.getElementById('booking-branch').value,
-        visitType: document.getElementById('booking-visit').value,
+        visitType: visitType,
         details: document.getElementById('booking-details').value
     };
+    
+    // Add branch or address depending on visit type
+    if (visitType === 'Home Visit') {
+        bookingData.address = document.getElementById('booking-address').value;
+    } else {
+        bookingData.branch = document.getElementById('booking-branch').value;
+    }
     
     try {
         const response = await fetch('https://threekg-babershop.onrender.com/api/bookings', {
@@ -179,8 +216,11 @@ document.getElementById('bookingForm').addEventListener('submit', async function
         const result = await response.json();
         
         if (result.success) {
-            alert('Booking saved to database!');
+            alert('Thank you for your booking!');
             this.reset();
+            // Reset fields visibility
+            document.getElementById('branchField').style.display = 'block';
+            document.getElementById('addressField').style.display = 'none';
         } else {
             alert('Error: ' + result.error);
         }

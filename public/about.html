@@ -309,6 +309,306 @@
             gap: 16px;
             align-items: center;
         }
+
+        @media (max-width: 768px) {
+
+    /* ===== HEADER FIX ===== */
+    header {
+        padding: 12px 20px;
+        gap: 12px;                    /* ensures spacing between elements */
+    }
+
+    header img.logo {
+        width: 44px;
+        height: 44px;
+        margin-left: 0;
+    }
+
+    /* Hide desktop nav & book button */
+    .desktop-nav,
+    .desktop-book {
+        display: none;
+    }
+
+    /* Show hamburger */
+    .hamburger-btn {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        margin-left: auto;            /* pushes hamburger to right */
+    }
+
+    .hamburger-btn span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background-color: var(--cream);
+        transition: all 0.3s;
+    }
+
+    /* ===== MOBILE NAV DRAWER ===== */
+    .mobile-nav {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: var(--dark);
+        border-left: 1px solid rgba(255,255,255,0.1);
+        z-index: 200;
+        padding: 80px 40px 40px;
+        transition: right 0.3s ease;
+    }
+
+    .mobile-nav.active {
+        right: 0;
+    }
+
+    .mobile-nav-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.6);
+        z-index: 150;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s;
+    }
+
+    .mobile-nav-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .mobile-nav-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: transparent;
+        border: none;
+        color: var(--cream);
+        font-size: 28px;
+        cursor: pointer;
+    }
+
+    .mobile-nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        list-style: none;
+    }
+
+    .mobile-nav ul li a {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 28px;
+        color: var(--cream);
+        text-decoration: none;
+        letter-spacing: 2px;
+        transition: color 0.2s;
+    }
+
+    .mobile-nav ul li a:hover,
+    .mobile-nav ul li a.active {
+        color: var(--red);
+    }
+
+    /* FIXED: Book button inside mobile nav drawer */
+    .mobile-nav .book-btn {
+        display: block;              /* fixes width:100% on <a> */
+        width: 100%;
+        box-sizing: border-box;      /* includes padding in width */
+        text-align: center;
+        margin-top: 32px;
+        font-size: 14px;
+        padding: 10px 20px;
+        letter-spacing: 1px;
+        text-decoration: none;
+        white-space: nowrap;         /* prevents text wrapping */
+    }
+
+    /* ===== ABOUT HERO ===== */
+    .about-hero {
+        padding: 40px 24px 40px;
+    }
+
+    .about-eyebrow {
+        font-size: 13px;
+        letter-spacing: 3px;
+    }
+
+    .about-hero-title {
+        font-size: 56px;
+        letter-spacing: 2px;
+        margin-bottom: 16px;
+    }
+
+    .about-hero-sub {
+        font-size: 13px;
+        line-height: 1.6;
+        max-width: 100%;
+    }
+
+    .about-hero-watermark {
+        font-size: 180px;
+        right: -10px;
+        top: 10px;
+    }
+
+    /* ===== DIVIDER ===== */
+    .divider {
+        margin: 0 24px;
+    }
+
+    /* ===== STORY SECTION ===== */
+    .about-story {
+        padding: 40px 24px;
+    }
+
+    .story-eyebrow {
+        font-size: 11px;
+        letter-spacing: 3px;
+        margin-bottom: 16px;
+    }
+
+    .story-body {
+        font-size: 14px;
+        letter-spacing: 1px;
+        line-height: 1.6;
+        margin-bottom: 16px;
+    }
+
+    /* ===== VALUES SECTION ===== */
+    .about-values {
+        padding: 50px 24px 60px;
+    }
+
+    .about-values::before {
+        font-size: 200px;
+        right: -20px;
+        top: 20px;
+    }
+
+    .values-eyebrow {
+        font-size: 13px;
+        letter-spacing: 3px;
+    }
+
+    .values-title {
+        font-size: 42px;
+        letter-spacing: 2px;
+        margin-bottom: 32px;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-bottom: 50px;
+    }
+
+    .value-card {
+        padding: 24px 20px;
+    }
+
+    .value-number {
+        font-size: 36px;
+        margin-bottom: 8px;
+    }
+
+    .value-name {
+        font-size: 22px;
+        letter-spacing: 2px;
+        margin-bottom: 8px;
+    }
+
+    .value-desc {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    /* ===== TEAM SECTION ===== */
+    .about-team {
+        padding: 0 24px 60px;
+    }
+
+    .team-header {
+        margin-bottom: 28px;
+        padding-top: 40px;
+    }
+
+    .team-eyebrow {
+        font-size: 13px;
+        letter-spacing: 3px;
+    }
+
+    .team-title {
+        font-size: 42px;
+        letter-spacing: 2px;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .team-info {
+        padding: 16px 18px 18px;
+    }
+
+    .team-name {
+        font-size: 22px;
+    }
+
+    /* ===== ABOUT CTA ===== */
+    .about-cta {
+        padding: 50px 24px 60px;
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+    }
+
+    .about-cta-title {
+        font-size: 42px;
+        letter-spacing: 2px;
+    }
+
+    .about-cta-sub {
+        font-size: 13px;
+        margin-top: 8px;
+    }
+
+    .about-cta-btns {
+        gap: 12px;
+    }
+
+    .about-cta-btns .book-btn,
+    .about-cta-btns .ourwork-btn {
+        font-size: 14px;
+        padding: 10px 24px;
+    }
+
+    /* ===== FOOTER ===== */
+    .site-footer {
+        flex-direction: column;
+        gap: 12px;
+        padding: 24px;
+        text-align: center;
+    }
+
+    .footer-logo {
+        font-size: 24px;
+    }
+
+    .footer-mid,
+    .footer-copy {
+        font-size: 10px;
+    }
+}
     </style>
 </head>
 <body>
@@ -366,8 +666,8 @@
 <section class="about-story">
     <div class="about-story-inner">
         <p class="story-eyebrow">OUR STORY</p>
-        <p class="story-body">3KG BARBERSHOP STARTED IN 2023 WITH ONE CHAIR, ONE MISSION, AND ZERO COMPROMISES. WHAT BEGAN AS A NEIGHBORHOOD SPOT QUICKLY BECAME THE GO-TO FOR MEN WHO TAKE THEIR LOOK SERIOUSLY.</p>
-        <p class="story-body">EVERY BARBER AT 3KG IS TRAINED TO THE SAME STANDARD — NOT JUST IN TECHNIQUE, BUT IN THE WAY THEY TREAT EVERY CLIENT WHO SITS IN THAT CHAIR. BECAUSE A GREAT CUT IS MORE THAN JUST HAIR. IT'S CONFIDENCE. IT'S IDENTITY. IT'S CRAFT.</p>
+        <p class="story-body">3KG is a hairstyling brand built on creativity, confidence, and self-expression. Known for delivering clean cuts, modern styles, and quality service, 3KG continues to grow as a trusted name for clients who want to stand out and feel confident in their look. The brand represents more than just hairstyling — it represents passion, originality, and the culture of expressing yourself through style. Every service is focused on giving clients a professional experience while bringing out their best and most confident version.</p>
+        <p class="story-body">Behind 3KG is D-k, a dedicated hairstyling artist with a passion for transforming ideas into unique and stylish looks. Through his creativity, precision, and commitment to his craft, D-k has built 3KG into a brand that values both quality and individuality. His vision is to create a space where clients can feel comfortable, confident, and truly express themselves through every haircut and style.</p>
     </div>
 </section>
 
