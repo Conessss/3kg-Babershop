@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/339888103_617339846927129_7791889255149775750_n.jpg" />
+    <title>3KG Barbershop — ADMIN DASHBOARD</title>
+</head>
+<body>
+    <header>
+        <img class="logo" src="images/339888103_617339846927129_7791889255149775750_n.jpg" alt="logo">
+        <nav class="desktop-nav">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="admin.html" class="active">ADMIN DASHBOARD</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="admin-section">
+        <div class="admin-header">
+            <h1 class="admin-title">BOOKING <span>DASHBOARD</span></h1>
+            <p class="admin-sub">Manage your walk-ins and home visits</p>
+        </div>
+
+        <div class="table-container">
+            <table id="bookingsTable">
+                <thead>
+                    <tr>
+                        <th>Date & Time</th>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Type</th>
+                        <th>Location / Branch</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody id="bookingsBody">
+                    <tr>
+                        <td colspan="6" style="text-align: center; padding: 40px;">Loading bookings...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <script>
+        // Fetch bookings from your existing server endpoint
+        async function fetchBookings() {
+            try {
+                // Because admin.html is served from the same server, we can use a relative path
+                const response = await fetch('/api/bookings');
+                const bookings = await response.json();
+                
+                const tbody = document.getElementById('bookingsBody');
+                tbody.innerHTML = ''; // Clear the loading text
+
+                if (bookings.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 40px;">No bookings found.</td></tr>';
+                    return;
+                }
+
+                // Loop through the data and build the table rows
+                bookings.forEach(booking => {
+                    const tr = document.createElement('tr');
+                    
+                    // Determine location display based on visit type
+                    const location = booking.visitType === 'Home Visit' 
+                        ? booking.address 
+                        : booking.branch;
+
+                    tr.innerHTML = `
+                        <td>
+                            <div class="date-time-cell">
+                                <span class="b-date">${booking.date || 'N/A'}</span>
+                                <span class="b-time">${booking.time || 'N/A'}</span>
+                            </div>
+                        </td>
+                        <td>${booking.name || 'N/A'}</td>
+                        <td>${booking.phone || 'N/A'}</td>
+                        <td>
+                            <span class="type-badge ${booking.visitType === 'Home Visit' ? 'home' : 'walk'}">
+                                ${booking.visitType || 'N/A'}
+                            </span>
+                        </td>
+                        <td>${location || 'N/A'}</td>
+                        <td>${booking.details || '-'}</td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+            } catch (error) {
+                console.error('Error fetching bookings:', error);
+                document.getElementById('bookingsBody').innerHTML = '<tr><td colspan="6" style="text-align: center; color: var(--red);">Failed to load bookings. Make sure the server is running.</td></tr>';
+            }
+        }
+
+        // Run the fetch function as soon as the page loads
+        document.addEventListener('DOMContentLoaded', fetchBookings);
+    </script>
+</body>
+</html>
