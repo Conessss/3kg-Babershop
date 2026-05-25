@@ -8,6 +8,12 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    
+    // Intercept OPTIONS method and send a 200 OK response to pass the preflight check
+    if (req.method === 'OPTIONS') {
+        return res.sendStatus(200);
+    }
+    
     next();
 });
 
@@ -61,7 +67,7 @@ app.get('/api/bookings', async (req, res) => {
     }
 });
 
-// 3. Delete a booking (NEW ADDITION)
+// 3. Delete a booking
 app.delete('/api/bookings/:id', async (req, res) => {
     try {
         const bookingId = req.params.id;
