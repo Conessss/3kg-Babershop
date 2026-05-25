@@ -38,7 +38,9 @@ const bookingSchema = new mongoose.Schema({
 
 const Booking = mongoose.model('Booking', bookingSchema);
 
-// API Routes
+// ===== API ROUTES =====
+
+// 1. Create a new booking
 app.post('/api/bookings', async (req, res) => {
     try {
         const booking = new Booking(req.body);
@@ -49,6 +51,7 @@ app.post('/api/bookings', async (req, res) => {
     }
 });
 
+// 2. Get all bookings
 app.get('/api/bookings', async (req, res) => {
     try {
         const bookings = await Booking.find().sort({ createdAt: -1 });
@@ -58,8 +61,26 @@ app.get('/api/bookings', async (req, res) => {
     }
 });
 
+// 3. Delete a booking (NEW ADDITION)
+app.delete('/api/bookings/:id', async (req, res) => {
+    try {
+        const bookingId = req.params.id;
+        
+        // Find the booking by ID and remove it from MongoDB
+        const deletedBooking = await Booking.findByIdAndDelete(bookingId);
+
+        if (!deletedBooking) {
+            return res.status(404).json({ success: false, message: 'Booking not found.' });
+        }
+
+        res.json({ success: true, message: 'Booking successfully deleted.' });
+    } catch (error) {
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
 // Start server
-const PORT = 3000;
+const PORT = process.env.PORT || 3000; // Updated to support Render's dynamic ports
 app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
+    console.log(`Server running on port ${PORT}`);
 });
