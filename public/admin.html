@@ -123,10 +123,7 @@
 
         // New function to handle deletion
         async function deleteBooking(id) {
-            // Confirm before deleting to prevent accidental clicks
-            if (!confirm('Are you sure you want to delete this booking? This action cannot be undone.')) {
-                return; 
-            }
+           
 
             try {
                 // Send DELETE request to your backend
@@ -136,6 +133,27 @@
 
                 if (response.ok) {
                     alert('Booking deleted successfully.');
+                    // Refresh the table to show updated data
+                    fetchBookings();
+                } else {
+                    alert('Failed to delete the booking. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error deleting booking:', error);
+                alert('An error occurred while trying to delete the booking.');
+            }
+        }
+        // New function to handle deletion (Instant - No confirmation popup)
+        async function deleteBooking(id) {
+            try {
+                // Send DELETE request to your backend immediately
+                const response = await fetch(`https://threekg-babershop.onrender.com/api/bookings/${id}`, {
+                    method: 'DELETE',
+                });
+
+                if (response.ok) {
+                    // Optional: You can remove this alert too if you don't want ANY popups
+                    alert('Booking deleted successfully.'); 
                     // Refresh the table to show updated data
                     fetchBookings();
                 } else {
