@@ -85,6 +85,28 @@ app.delete('/api/bookings/:id', async (req, res) => {
         res.status(500).json({ success: false, error: error.message });
     }
 });
+
+// 4. Update a booking
+app.put('/api/bookings/:id', async (req, res) => {
+    try {
+        const bookingId = req.params.id;
+        
+        // Find the booking by ID and update it with the new data from req.body
+        const updatedBooking = await Booking.findByIdAndUpdate(
+            bookingId, 
+            req.body, 
+            { new: true } // This tells Mongoose to return the updated version
+        );
+
+        if (!updatedBooking) {
+            return res.status(404).json({ success: false, message: 'Booking not found.' });
+        }
+
+        res.json({ success: true, message: 'Booking successfully updated.', booking: updatedBooking });
+    } catch (error) {
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
 // Start server
 const PORT = process.env.PORT || 3000; // Updated to support Render's dynamic ports
 app.listen(PORT, () => {
