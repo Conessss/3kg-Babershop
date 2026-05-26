@@ -8,6 +8,12 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    
+    // Intercept OPTIONS method and send a 200 OK response to pass the preflight check
+    if (req.method === 'OPTIONS') {
+        return res.sendStatus(200);
+    }
+    
     next();
 });
 
@@ -38,7 +44,9 @@ const bookingSchema = new mongoose.Schema({
 
 const Booking = mongoose.model('Booking', bookingSchema);
 
-// API Routes
+// ===== API ROUTES =====
+
+// 1. Create a new booking
 app.post('/api/bookings', async (req, res) => {
     try {
         const booking = new Booking(req.body);
@@ -49,6 +57,7 @@ app.post('/api/bookings', async (req, res) => {
     }
 });
 
+// 2. Get all bookings
 app.get('/api/bookings', async (req, res) => {
     try {
         const bookings = await Booking.find().sort({ createdAt: -1 });
@@ -58,8 +67,48 @@ app.get('/api/bookings', async (req, res) => {
     }
 });
 
+
+// 3. Delete a booking
+app.delete('/api/bookings/:id', async (req, res) => {
+    try {
+        const bookingId = req.params.id;
+        
+        // Find the booking by ID and remove it from MongoDB
+        const deletedBooking = await Booking.findByIdAndDelete(bookingId);
+
+        if (!deletedBooking) {
+            return res.status(404).json({ success: false, message: 'Booking not found.' });
+        }
+
+        res.json({ success: true, message: 'Booking successfully deleted.' });
+    } catch (error) {
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+// 4. Update a booking
+app.put('/api/bookings/:id', async (req, res) => {
+    try {
+        const bookingId = req.params.id;
+        
+        // Find the booking by ID and update it with the new data from req.body
+        const updatedBooking = await Booking.findByIdAndUpdate(
+            bookingId, 
+            req.body, 
+            { new: true } // This tells Mongoose to return the updated version
+        );
+
+        if (!updatedBooking) {
+            return res.status(404).json({ success: false, message: 'Booking not found.' });
+        }
+
+        res.json({ success: true, message: 'Booking successfully updated.', booking: updatedBooking });
+    } catch (error) {
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
 // Start server
-const PORT = 3000;
+const PORT = process.env.PORT || 3000; // Updated to support Render's dynamic ports
 app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
+    console.log(`Server running on port ${PORT}`);
 });

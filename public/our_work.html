@@ -10,11 +10,9 @@
 </head>
 <body>
 
-<!-- ===== HEADER ===== -->
 <header>
     <img class="logo" src="images/339888103_617339846927129_7791889255149775750_n.jpg" alt="logo">
     
-    <!-- Desktop Nav -->
     <nav class="desktop-nav">
         <ul>
             <li><a href="index.html">HOME</a></li>
@@ -27,7 +25,6 @@
     
     <a href="book.html" class="book-btn desktop-book">BOOK NOW</a>
     
-    <!-- Hamburger Button -->
     <button class="hamburger-btn" onclick="toggleMobileNav()">
         <span></span>
         <span></span>
@@ -35,7 +32,6 @@
     </button>
 </header>
 
-<!-- ===== MOBILE NAV DRAWER ===== -->
 <div class="mobile-nav-overlay" onclick="toggleMobileNav()"></div>
 <div class="mobile-nav" id="mobileNav">
     <button class="mobile-nav-close" onclick="toggleMobileNav()">×</button>
@@ -49,7 +45,6 @@
     <a href="book.html" class="book-btn">BOOK NOW</a>
 </div>
 
-<!-- ===== PAGE HERO ===== -->
 <section class="work-hero">
     <div class="work-hero-inner">
         <p class="hero-eyebrow">THE PORTFOLIO</p>
@@ -61,24 +56,21 @@
 
 <div class="divider"></div>
 
-<!-- ===== PORTFOLIO SECTION ===== -->
 <section class="portfolio-section">
 
-    <!-- Filter Tabs -->
     <div class="filter-tabs">
         <button class="filter-btn active" data-filter="all">ALL</button>
         <button class="filter-btn" data-filter="fades">FADES</button>
         <button class="filter-btn" data-filter="tapers">TAPERS</button>
         <button class="filter-btn" data-filter="classic">CLASSIC CUTS</button>
+
+        <input type="text" id="portfolioSearch" placeholder="SEARCH PORTFOLIO...">
     </div>
 
-    <!-- Section Label -->
     <p class="portfolio-label">THE PORTFOLIO</p>
 
-    <!-- Photo Grid -->
     <div class="portfolio-grid" id="portfolioGrid">
 
-        <!-- Row 1 -->
         <div class="grid-item" data-category="fades">
             <img src="images/hc1.jpg" alt="Fade cut 1">
             <div class="grid-overlay">
@@ -98,7 +90,6 @@
             </div>
         </div>
 
-        <!-- Row 2 -->
         <div class="grid-item" data-category="classic">
             <img src="images/hc2.2.jpg" alt="Classic cut 1">
             <div class="grid-overlay">
@@ -118,7 +109,6 @@
             </div>
         </div>
 
-        <!-- Row 3 -->
         <div class="grid-item" data-category="fades">
             <img src="images/new_img h1.jpg" alt="Fade cut 4">
             <div class="grid-overlay">
@@ -138,7 +128,6 @@
             </div>
         </div>
 
-        <!-- Row 4 -->
         <div class="grid-item" data-category="classic">
             <img src="images/new_img h4 .jpg" alt="Classic cut 3">
             <div class="grid-overlay">
@@ -158,8 +147,7 @@
             </div>
         </div>
 
-         <!-- Row 5 -->
-        <div class="grid-item" data-category="classic">
+         <div class="grid-item" data-category="classic">
             <img src="images/new_img h7.jpg" alt="Classic cut 3">
             <div class="grid-overlay">
                 <span>CLASSIC CUT</span>
@@ -181,7 +169,6 @@
     </div>
 </section>
 
-<!-- ===== NEXT CTA ===== -->
 <section class="next-cta">
     <div class="next-cta-left">
         <h2 class="next-title">WANT TO BE</h2>
@@ -194,7 +181,6 @@
     </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
 <footer class="site-footer">
     <span class="footer-logo">3KG</span>
     <span class="footer-mid">EST. SINCE 2023 &nbsp;·&nbsp; NO FLUFF &nbsp;·&nbsp; ALL CRAFT</span>
@@ -202,18 +188,26 @@
 </footer>
 
 <script>
-    // Filter functionality
+    // Elements
     const filterBtns = document.querySelectorAll('.filter-btn');
     const gridItems = document.querySelectorAll('.grid-item');
+    const searchInput = document.getElementById('portfolioSearch');
 
+    // 1. Button Filter Functionality
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            // Toggle active button
+            // Toggle active button class
             filterBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
+            // Clear the search bar if a button is clicked
+            if(searchInput) {
+                searchInput.value = '';
+            }
+
             const filter = btn.dataset.filter;
 
+            // Show/Hide items based on category
             gridItems.forEach(item => {
                 if (filter === 'all' || item.dataset.category === filter) {
                     item.classList.remove('hidden');
@@ -224,7 +218,33 @@
         });
     });
 
-    // Mobile nav toggle
+    // 2. Search Bar Functionality
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase().trim();
+
+            // Set the "ALL" button to active since we are searching globally
+            filterBtns.forEach(b => b.classList.remove('active'));
+            document.querySelector('[data-filter="all"]').classList.add('active');
+
+            // Loop through grid items to find matches
+            gridItems.forEach(item => {
+                // Get the text we want to search through
+                const category = item.dataset.category.toLowerCase();
+                const altText = item.querySelector('img').alt.toLowerCase();
+                const overlayText = item.querySelector('.grid-overlay span').textContent.toLowerCase();
+
+                // If the search term is found in any of those places, show it. Otherwise, hide it.
+                if (category.includes(searchTerm) || altText.includes(searchTerm) || overlayText.includes(searchTerm)) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        });
+    }
+
+    // 3. Mobile nav toggle
     function toggleMobileNav() {
         document.getElementById('mobileNav').classList.toggle('active');
         document.querySelector('.mobile-nav-overlay').classList.toggle('active');
