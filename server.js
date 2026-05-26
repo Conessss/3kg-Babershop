@@ -8,12 +8,6 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-    
-    // Intercept OPTIONS method and send a 200 OK response to pass the preflight check
-    if (req.method === 'OPTIONS') {
-        return res.sendStatus(200);
-    }
-    
     next();
 });
 
@@ -28,13 +22,14 @@ mongoose.connect(uri)
 .then(() => console.log("Connected to MongoDB!"))
 .catch((error) => console.log("Error:", error.message));
 
-// Booking Schema
+// Booking Schema - NOW INCLUDES HAIRSTYLE FIELD
 const bookingSchema = new mongoose.Schema({
     name: String,
     phone: String,
     date: String,
     time: String,
     service: String,
+    hairstyle: String,      // <-- NEW: Client's chosen hairstyle
     branch: String,
     address: String,        
     visitType: String,
@@ -44,9 +39,7 @@ const bookingSchema = new mongoose.Schema({
 
 const Booking = mongoose.model('Booking', bookingSchema);
 
-// ===== API ROUTES =====
-
-// 1. Create a new booking
+// API Routes
 app.post('/api/bookings', async (req, res) => {
     try {
         const booking = new Booking(req.body);
@@ -57,7 +50,6 @@ app.post('/api/bookings', async (req, res) => {
     }
 });
 
-// 2. Get all bookings
 app.get('/api/bookings', async (req, res) => {
     try {
         const bookings = await Booking.find().sort({ createdAt: -1 });
@@ -67,48 +59,38 @@ app.get('/api/bookings', async (req, res) => {
     }
 });
 
-
-// 3. Delete a booking
-app.delete('/api/bookings/:id', async (req, res) => {
-    try {
-        const bookingId = req.params.id;
-        
-        // Find the booking by ID and remove it from MongoDB
-        const deletedBooking = await Booking.findByIdAndDelete(bookingId);
-
-        if (!deletedBooking) {
-            return res.status(404).json({ success: false, message: 'Booking not found.' });
-        }
-
-        res.json({ success: true, message: 'Booking successfully deleted.' });
-    } catch (error) {
-        res.status(500).json({ success: false, error: error.message });
-    }
-});
-
-// 4. Update a booking
+// PUT route for updating bookings (including hairstyle)
 app.put('/api/bookings/:id', async (req, res) => {
     try {
-        const bookingId = req.params.id;
-        
-        // Find the booking by ID and update it with the new data from req.body
-        const updatedBooking = await Booking.findByIdAndUpdate(
-            bookingId, 
-            req.body, 
-            { new: true } // This tells Mongoose to return the updated version
+        const updated = await Booking.findByIdAndUpdate(
+            req.params.id,
+            req.body,
+            { new: true }
         );
-
-        if (!updatedBooking) {
-            return res.status(404).json({ success: false, message: 'Booking not found.' });
+        if (!updated) {
+            return res.status(404).json({ success: false, error: "Booking not found" });
         }
-
-        res.json({ success: true, message: 'Booking successfully updated.', booking: updatedBooking });
+        res.json({ success: true, message: "Booking updated!", booking: updated });
     } catch (error) {
         res.status(500).json({ success: false, error: error.message });
     }
 });
+
+// DELETE route for deleting bookings
+app.delete('/api/bookings/:id', async (req, res) => {
+    try {
+        const deleted = await Booking.findByIdAndDelete(req.params.id);
+        if (!deleted) {
+            return res.status(404).json({ success: false, error: "Booking not found" });
+        }
+        res.json({ success: true, message: "Booking deleted!" });
+    } catch (error) {
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
 // Start server
-const PORT = process.env.PORT || 3000; // Updated to support Render's dynamic ports
+const PORT = 3000;
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+    console.log(`Server running at http://localhost:${PORT}`);
 });

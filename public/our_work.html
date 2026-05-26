@@ -6,13 +6,13 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="icon" href="images/339888103_617339846927129_7791889255149775750_n.jpg" />
-    <title>3KG Barbershop — Our Work</title>
+    <title>3KG Barbershop — OUR WORK</title>
 </head>
 <body>
 
 <header>
     <img class="logo" src="images/339888103_617339846927129_7791889255149775750_n.jpg" alt="logo">
-    
+
     <nav class="desktop-nav">
         <ul>
             <li><a href="index.html">HOME</a></li>
@@ -22,9 +22,9 @@
             <li><a href="contact.html">CONTACT</a></li>
         </ul>
     </nav>
-    
+
     <a href="book.html" class="book-btn desktop-book">BOOK NOW</a>
-    
+
     <button class="hamburger-btn" onclick="toggleMobileNav()">
         <span></span>
         <span></span>
@@ -45,142 +45,151 @@
     <a href="book.html" class="book-btn">BOOK NOW</a>
 </div>
 
+<!-- ===== HERO ===== -->
 <section class="work-hero">
-    <div class="work-hero-inner">
-        <p class="hero-eyebrow">THE PORTFOLIO</p>
-        <h1 class="hero-title">OUR<br><span>WORK.</span></h1>
-        <p class="hero-sub">Every chair tells a story. Every fade is a signature. This is what<br>we've built, one cut at a time.</p>
-    </div>
+    <p class="hero-eyebrow">THE PORTFOLIO</p>
+    <h1 class="hero-title">OUR <span>WORK.</span></h1>
+    <p class="hero-sub">Every cut tells a story. Browse our signature styles and find the look that speaks to you. Click any style to book it.</p>
     <div class="hero-watermark">3KG</div>
 </section>
 
 <div class="divider"></div>
 
-<section class="portfolio-section">
+<!-- ===== HAIRSTYLE GALLERY ===== -->
+<section class="portfolio-section full-width">
+<!-- 
+    <p class="portfolio-label">HAIRSTYLES</p> -->
 
-    <div class="filter-tabs">
-        <button class="filter-btn active" data-filter="all">ALL</button>
-        <button class="filter-btn" data-filter="fades">FADES</button>
-        <button class="filter-btn" data-filter="tapers">TAPERS</button>
-        <button class="filter-btn" data-filter="classic">CLASSIC CUTS</button>
+    <div class="hairstyles-grid">
 
-        <input type="text" id="portfolioSearch" placeholder="SEARCH PORTFOLIO...">
+        <!-- Hairstyle 1: Classic Fade -->
+        <div class="hairstyle-card" data-name="Classic Fade" data-img="images/hc1.jpg">
+            <div class="hairstyle-img-wrap">
+                <img src="images/hc1.jpg" alt="Classic Fade">
+            </div>
+            <div class="hairstyle-info">
+                <h3 class="hairstyle-name">CLASSIC FADE</h3>
+                <p class="hairstyle-desc">Clean, timeless fade that works for any occasion.</p>
+                <a href="book.html?style=Classic+Fade&img=images/hc1.jpg" class="hairstyle-book-btn">BOOK THIS STYLE</a>
+            </div>
+        </div>
+
+        <!-- Hairstyle 2: Low Taper -->
+        <div class="hairstyle-card" data-name="Low Taper" data-img="images/hc2.jpg">
+            <div class="hairstyle-img-wrap">
+                <img src="images/hc1.1.jpg" alt="Low Taper">
+            </div>
+            <div class="hairstyle-info">
+                <h3 class="hairstyle-name">LOW TAPER</h3>
+                <p class="hairstyle-desc">Subtle taper starting low for a professional look.</p>
+                <a href="book.html?style=Low+Taper&img=images/hc2.jpg" class="hairstyle-book-btn">BOOK THIS STYLE</a>
+            </div>
+        </div>
+
+        <!-- Hairstyle 3: Mid Fade -->
+        <div class="hairstyle-card" data-name="Mid Fade" data-img="images/hc3.jpg">
+            <div class="hairstyle-img-wrap">
+                <img src="images/hc2.jpg" alt="Mid Fade">
+            </div>
+            <div class="hairstyle-info">
+                <h3 class="hairstyle-name">MID FADE</h3>
+                <p class="hairstyle-desc">Versatile fade starting at the temples for a balanced look.</p>
+                <a href="book.html?style=Mid+Fade&img=images/hc3.jpg" class="hairstyle-book-btn">BOOK THIS STYLE</a>
+            </div>
+        </div>
+
+        <!-- Hairstyle 4: High Fade -->
+        <div class="hairstyle-card" data-name="High Fade" data-img="images/hc4.jpg">
+            <div class="hairstyle-img-wrap">
+                <img src="images/hc2.2.jpg" alt="High Fade">
+            </div>
+            <div class="hairstyle-info">
+                <h3 class="hairstyle-name">HIGH FADE</h3>
+                <p class="hairstyle-desc">Bold fade starting high for a sharp, modern edge.</p>
+                <a href="book.html?style=High+Fade&img=images/hc4.jpg" class="hairstyle-book-btn">BOOK THIS STYLE</a>
+            </div>
+        </div>
+
+        <!-- Hairstyle 5: Buzz Cut -->
+        <div class="hairstyle-card" data-name="Buzz Cut" data-img="images/hc5.jpg">
+            <div class="hairstyle-img-wrap">
+                <img src="images/new_img h1.jpg" alt="Buzz Cut">
+            </div>
+            <div class="hairstyle-info">
+                <h3 class="hairstyle-name">BUZZ CUT</h3>
+                <p class="hairstyle-desc">Short, clean, and low maintenance. Always sharp.</p>
+                <a href="book.html?style=Buzz+Cut&img=images/hc5.jpg" class="hairstyle-book-btn">BOOK THIS STYLE</a>
+            </div>
+        </div>
+
+        <!-- Hairstyle 6: Pompadour -->
+        <div class="hairstyle-card" data-name="Pompadour" data-img="images/hc6.jpg">
+            <div class="hairstyle-img-wrap">
+                <img src="images/hc10.jpg" alt="Pompadour">
+            </div>
+            <div class="hairstyle-info">
+                <h3 class="hairstyle-name">POMPADOUR</h3>
+                <p class="hairstyle-desc">Classic volume on top with a clean fade on the sides.</p>
+                <a href="book.html?style=Pompadour&img=images/hc6.jpg" class="hairstyle-book-btn">BOOK THIS STYLE</a>
+            </div>
+        </div>
+
+        <!-- Hairstyle 7: Undercut -->
+        <div class="hairstyle-card" data-name="Undercut" data-img="images/hc7.jpg">
+            <div class="hairstyle-img-wrap">
+                <img src="images/hc11.jpg" alt="Undercut">
+            </div>
+            <div class="hairstyle-info">
+                <h3 class="hairstyle-name">UNDERCUT</h3>
+                <p class="hairstyle-desc">Sharp contrast between long top and shaved sides.</p>
+                <a href="book.html?style=Undercut&img=images/hc7.jpg" class="hairstyle-book-btn">BOOK THIS STYLE</a>
+            </div>
+        </div>
+
+        <!-- Hairstyle 8: Textured Crop -->
+        <div class="hairstyle-card" data-name="Textured Crop" data-img="images/hc8.jpg">
+            <div class="hairstyle-img-wrap">
+                <img src="images/new_img h2.jpg" alt="Textured Crop">
+            </div>
+            <div class="hairstyle-info">
+                <h3 class="hairstyle-name">TEXTURED CROP</h3>
+                <p class="hairstyle-desc">Messy, textured top with a tight fade. Modern and stylish.</p>
+                <a href="book.html?style=Textured+Crop&img=images/hc8.jpg" class="hairstyle-book-btn">BOOK THIS STYLE</a>
+            </div>
+        </div>
+
+        <!-- Hairstyle 9: Slick Back -->
+        <div class="hairstyle-card" data-name="Slick Back" data-img="images/hc9.jpg">
+            <div class="hairstyle-img-wrap">
+                <img src="images/new_img h4 .jpg" alt="Slick Back">
+            </div>
+            <div class="hairstyle-info">
+                <h3 class="hairstyle-name">SLICK BACK</h3>
+                <p class="hairstyle-desc">Sleek, polished look combed back with precision.</p>
+                <a href="book.html?style=Slick+Back&img=images/hc9.jpg" class="hairstyle-book-btn">BOOK THIS STYLE</a>
+            </div>
+        </div>
+
+        
+
     </div>
 
-    <p class="portfolio-label">THE PORTFOLIO</p>
-
-    <div class="portfolio-grid" id="portfolioGrid">
-
-        <div class="grid-item" data-category="fades">
-            <img src="images/hc1.jpg" alt="Fade cut 1">
-            <div class="grid-overlay">
-                <span>FADE</span>
-            </div>
-        </div>
-        <div class="grid-item" data-category="tapers">
-            <img src="images/hc1.1.jpg" alt="Taper cut 1">
-            <div class="grid-overlay">
-                <span>TAPER</span>
-            </div>
-        </div>
-        <div class="grid-item" data-category="fades">
-            <img src="images/hc2.jpg" alt="Fade cut 2">
-            <div class="grid-overlay">
-                <span>FADE</span>
-            </div>
-        </div>
-
-        <div class="grid-item" data-category="classic">
-            <img src="images/hc2.2.jpg" alt="Classic cut 1">
-            <div class="grid-overlay">
-                <span>CLASSIC CUT</span>
-            </div>
-        </div>
-        <div class="grid-item" data-category="tapers">
-            <img src="images/hc11.jpg" alt="Taper cut 2">
-            <div class="grid-overlay">
-                <span>TAPER</span>
-            </div>
-        </div>
-        <div class="grid-item" data-category="fades">
-            <img src="images/hc10.jpg" alt="Fade cut 3">
-            <div class="grid-overlay">
-                <span>FADE</span>
-            </div>
-        </div>
-
-        <div class="grid-item" data-category="fades">
-            <img src="images/new_img h1.jpg" alt="Fade cut 4">
-            <div class="grid-overlay">
-                <span>FADE</span>
-            </div>
-        </div>
-        <div class="grid-item" data-category="classic">
-            <img src="images/new_img h2.jpg" alt="Classic cut 2">
-            <div class="grid-overlay">
-                <span>CLASSIC CUT</span>
-            </div>
-        </div>
-        <div class="grid-item" data-category="tapers">
-            <img src="images/new_img h3.jpg" alt="Taper cut 3">
-            <div class="grid-overlay">
-                <span>TAPER</span>
-            </div>
-        </div>
-
-        <div class="grid-item" data-category="classic">
-            <img src="images/new_img h4 .jpg" alt="Classic cut 3">
-            <div class="grid-overlay">
-                <span>CLASSIC CUT</span>
-            </div>
-        </div>
-        <div class="grid-item" data-category="fades">
-            <img src="images/new_img h5 .jpg" alt="Fade cut 5">
-            <div class="grid-overlay">
-                <span>FADE</span>
-            </div>
-        </div>
-        <div class="grid-item" data-category="tapers">
-            <img src="images/new_img h6.jpg" alt="Taper cut 4">
-            <div class="grid-overlay">
-                <span>TAPER</span>
-            </div>
-        </div>
-
-         <div class="grid-item" data-category="classic">
-            <img src="images/new_img h7.jpg" alt="Classic cut 3">
-            <div class="grid-overlay">
-                <span>CLASSIC CUT</span>
-            </div>
-        </div>
-        <div class="grid-item" data-category="fades">
-            <img src="images/new_img h8.jpg" alt="Fade cut 5">
-            <div class="grid-overlay">
-                <span>FADE</span>
-            </div>
-        </div>
-        <div class="grid-item" data-category="tapers">
-            <img src="images/new_img h9.jpg" alt="Taper cut 4">
-            <div class="grid-overlay">
-                <span>TAPER</span>
-            </div>
-        </div>
-
-    </div>
 </section>
 
+<!-- ===== NEXT CTA ===== -->
 <section class="next-cta">
-    <div class="next-cta-left">
-        <h2 class="next-title">WANT TO BE</h2>
-        <h2 class="next-title red">NEXT?</h2>
-        <p class="next-sub">Book a slot and leave looking clean.</p>
+    <div>
+        <h2 class="next-title">LIKE WHAT</h2>
+        <h2 class="next-title red">YOU SEE?</h2>
+        <p class="next-sub">Book your appointment and get the cut you want.</p>
     </div>
     <div class="next-btns">
         <a href="book.html" class="book-btn">BOOK NOW</a>
-        <a href="our_work.html" class="ourwork-btn">OUR WORK</a>
+        <a href="services.html" class="ourwork-btn">SERVICES</a>
     </div>
 </section>
 
+<!-- ===== FOOTER ===== -->
 <footer class="site-footer">
     <span class="footer-logo">3KG</span>
     <span class="footer-mid">EST. SINCE 2023 &nbsp;·&nbsp; NO FLUFF &nbsp;·&nbsp; ALL CRAFT</span>
@@ -188,67 +197,10 @@
 </footer>
 
 <script>
-    // Elements
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const gridItems = document.querySelectorAll('.grid-item');
-    const searchInput = document.getElementById('portfolioSearch');
-
-    // 1. Button Filter Functionality
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Toggle active button class
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            // Clear the search bar if a button is clicked
-            if(searchInput) {
-                searchInput.value = '';
-            }
-
-            const filter = btn.dataset.filter;
-
-            // Show/Hide items based on category
-            gridItems.forEach(item => {
-                if (filter === 'all' || item.dataset.category === filter) {
-                    item.classList.remove('hidden');
-                } else {
-                    item.classList.add('hidden');
-                }
-            });
-        });
-    });
-
-    // 2. Search Bar Functionality
-    if (searchInput) {
-        searchInput.addEventListener('input', (e) => {
-            const searchTerm = e.target.value.toLowerCase().trim();
-
-            // Set the "ALL" button to active since we are searching globally
-            filterBtns.forEach(b => b.classList.remove('active'));
-            document.querySelector('[data-filter="all"]').classList.add('active');
-
-            // Loop through grid items to find matches
-            gridItems.forEach(item => {
-                // Get the text we want to search through
-                const category = item.dataset.category.toLowerCase();
-                const altText = item.querySelector('img').alt.toLowerCase();
-                const overlayText = item.querySelector('.grid-overlay span').textContent.toLowerCase();
-
-                // If the search term is found in any of those places, show it. Otherwise, hide it.
-                if (category.includes(searchTerm) || altText.includes(searchTerm) || overlayText.includes(searchTerm)) {
-                    item.classList.remove('hidden');
-                } else {
-                    item.classList.add('hidden');
-                }
-            });
-        });
-    }
-
-    // 3. Mobile nav toggle
-    function toggleMobileNav() {
-        document.getElementById('mobileNav').classList.toggle('active');
-        document.querySelector('.mobile-nav-overlay').classList.toggle('active');
-    }
+function toggleMobileNav() {
+    document.getElementById('mobileNav').classList.toggle('active');
+    document.querySelector('.mobile-nav-overlay').classList.toggle('active');
+}
 </script>
 
 </body>

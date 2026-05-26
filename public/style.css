@@ -399,7 +399,6 @@ nav ul li a:hover {
     height: 100%;
     object-fit: cover;
     display: block;
-    filter: brightness(0.85) contrast(1.1);
 }
 
 /* --- Services Grid --- */
@@ -672,110 +671,81 @@ nav ul li a.active {
     margin: 0 120px;
 }
 
-/* ===== PORTFOLIO SECTION ===== */
-.portfolio-section {
-    padding: 60px 120px 80px;
-}
-
-/* Filter Tabs */
-.filter-tabs {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 44px;
-}
-
-.filter-btn {
-    background: transparent;
-    color: var(--cream);
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 17px;
-    letter-spacing: 2px;
-    padding: 10px 24px;
-    border: 1.5px solid rgba(255,255,255,0.2);
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.filter-btn:hover {
-    border-color: var(--cream);
-    color: white;
-}
-
-.filter-btn.active {
-    background: transparent;
-    border-color: var(--cream);
-    color: white;
-}
-
-/* Portfolio Label */
-.portfolio-label {
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 20px;
-    color: var(--cream);
-    letter-spacing: 5px;
-    margin-bottom: 20px;
-    opacity: 0.7;
-}
-
-/* Grid */
-.portfolio-grid {
+/* ===== HAIRSTYLES GRID (Our Work Page) ===== */
+.hairstyles-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 20px;
 }
 
-.grid-item {
-    position: relative;
+.hairstyle-card {
+    background: #1a1512;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px;
     overflow: hidden;
-    border-radius: 6px;
-    aspect-ratio: 4 / 3;
-    cursor: pointer;
-    transition: opacity 0.3s, transform 0.3s;
+    transition: border-color 0.2s, transform 0.2s;
 }
 
-.grid-item img {
+.hairstyle-card:hover {
+    border-color: var(--red);
+    transform: translateY(-4px);
+}
+
+.hairstyle-img-wrap {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+}
+
+.hairstyle-img-wrap img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    filter: brightness(0.82) contrast(1.1);
-    transition: transform 0.4s ease, filter 0.3s;
+    transition: transform 0.4s ease;
 }
 
-.grid-item:hover img {
-    transform: scale(1.06);
-    filter: brightness(0.6) contrast(1.15);
+.hairstyle-card:hover .hairstyle-img-wrap img {
+    transform: scale(1.04);
 }
 
-/* Overlay label */
-.grid-overlay {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: flex-end;
-    padding: 14px 16px;
-    opacity: 0;
-    transition: opacity 0.3s;
+.hairstyle-info {
+    padding: 20px 22px 24px;
 }
 
-.grid-overlay span {
+.hairstyle-name {
     font-family: "Bebas Neue", sans-serif;
-    font-size: 16px;
-    color: white;
+    font-size: 22px;
+    color: var(--cream);
     letter-spacing: 3px;
+    margin-bottom: 6px;
+}
+
+.hairstyle-desc {
+    font-family: sans-serif;
+    font-size: 12px;
+    color: rgba(212, 201, 168, 0.55);
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.hairstyle-book-btn {
+    display: inline-block;
+    background: transparent;
+    color: var(--red);
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    padding: 8px 20px;
+    border: 1.5px solid var(--red);
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.hairstyle-book-btn:hover {
     background: var(--red);
-    padding: 4px 12px;
-    border-radius: 4px;
-}
-
-.grid-item:hover .grid-overlay {
-    opacity: 1;
-}
-
-/* Hidden state for filter */
-.grid-item.hidden {
-    display: none;
+    color: white;
 }
 
 /* ===== NEXT CTA ===== */
@@ -1271,6 +1241,25 @@ nav ul li a.active {
 .booking-submit-btn:hover {
     background-color: #a93226;
 }
+
+/* Hairstyle hint text */
+.hairstyle-hint {
+    font-family: sans-serif;
+    font-size: 11px;
+    color: rgba(212, 201, 168, 0.4);
+    margin-top: 6px;
+    letter-spacing: 0.5px;
+}
+
+.hairstyle-hint a {
+    color: var(--red);
+    text-decoration: none;
+}
+
+.hairstyle-hint a:hover {
+    text-decoration: underline;
+}
+
 /* ===== FOOTER ===== */
 .site-footer {
     border-top: 1px solid rgba(255,255,255,0.07);
@@ -1348,7 +1337,7 @@ nav ul li a.active {
         padding: 10px 20px;
         letter-spacing: 1px;
         text-decoration: none;
-        display: inline-block;   /* ADD THIS */
+        display: inline-block;
         white-space: nowrap;
     }
 
@@ -1546,12 +1535,12 @@ nav ul li a.active {
     .hamburger-btn {
         display: flex;
     }
-    
+
     .mobile-nav,
     .mobile-nav-overlay {
         display: block;
     }
-    
+
     .desktop-nav,
     .desktop-book {
         display: none;
@@ -1785,51 +1774,37 @@ nav ul li a.active {
         margin: 0 24px;
     }
 
-    /* ===== PORTFOLIO SECTION ===== */
-    .portfolio-section {
-        padding: 40px 24px 60px;
-    }
-
-    /* Filter Tabs */
-    .filter-tabs {
-        gap: 8px;
-        margin-bottom: 32px;
-        flex-wrap: wrap;
-    }
-
-    .filter-btn {
-        font-size: 13px;
-        letter-spacing: 1px;
-        padding: 8px 16px;
-    }
-
-    /* Portfolio Label */
-    .portfolio-label {
-        font-size: 16px;
-        letter-spacing: 3px;
-        margin-bottom: 16px;
-    }
-
-    /* Grid */
-    .portfolio-grid {
+    /* ===== HAIRSTYLES GRID ===== */
+    .hairstyles-grid {
         grid-template-columns: 1fr;
-        gap: 12px;
+        gap: 16px;
     }
 
-    .grid-item {
+    .hairstyle-card {
+        border-radius: 10px;
+    }
+
+    .hairstyle-img-wrap {
         aspect-ratio: 16 / 9;
-        border-radius: 8px;
     }
 
-    .grid-overlay {
-        padding: 12px 14px;
-        opacity: 1;
+    .hairstyle-info {
+        padding: 16px 18px 20px;
     }
 
-    .grid-overlay span {
-        font-size: 14px;
+    .hairstyle-name {
+        font-size: 20px;
         letter-spacing: 2px;
-        padding: 4px 10px;
+    }
+
+    .hairstyle-desc {
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+
+    .hairstyle-book-btn {
+        font-size: 12px;
+        padding: 8px 18px;
     }
 
     /* ===== NEXT CTA ===== */
@@ -1939,7 +1914,7 @@ nav ul li a.active {
         letter-spacing: 2px;
         margin-bottom: 32px;
     }
-
+    
     .values-grid {
         grid-template-columns: 1fr;
         gap: 12px;
@@ -2290,12 +2265,12 @@ nav ul li a.active {
 }
 
 .hamburger-btn {
-    display: none;  /* Hidden on desktop */
+    display: none;
 }
 
 @media (max-width: 768px) {
     .hamburger-btn {
-        display: flex;  /* Shows on mobile */
+        display: flex;
         flex-direction: column;
         gap: 5px;
         background: transparent;
@@ -2312,301 +2287,3 @@ nav ul li a.active {
         transition: all 0.3s;
     }
 }
-
-/* ===========================
-   ADMIN DASHBOARD STYLES
-   =========================== */
-.admin-section {
-    padding: 60px 120px 80px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
-.admin-header {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.admin-title {
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 64px;
-    color: var(--cream);
-    letter-spacing: 3px;
-    line-height: 1;
-}
-
-.admin-title span {
-    color: var(--red);
-}
-
-.admin-sub {
-    font-family: sans-serif;
-    font-size: 16px;
-    color: rgba(212, 201, 168, 0.6);
-    letter-spacing: 1px;
-}
-
-.table-container {
-    background: #1a1512;
-    border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 12px;
-    padding: 24px;
-    overflow-x: auto;
-}
-
-#bookingsTable {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
-}
-
-#bookingsTable th {
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 20px;
-    color: var(--red);
-    letter-spacing: 2px;
-    padding: 16px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-#bookingsTable td {
-    font-family: sans-serif;
-    font-size: 14px;
-    color: var(--cream);
-    padding: 16px;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-
-.date-time-cell {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.b-date {
-    font-weight: bold;
-    font-size: 16px;
-}
-
-.b-time {
-    font-size: 12px;
-    color: rgba(212, 201, 168, 0.6);
-}
-
-/* Custom Badges for Visit Types */
-.type-badge {
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    display: inline-block;
-}
-
-.type-badge.walk {
-    background: rgba(212, 201, 168, 0.1);
-    color: var(--cream);
-}
-
-.type-badge.home {
-    background: rgba(192, 57, 43, 0.2);
-    color: var(--red);
-}
-
-/* Mobile Responsiveness for Admin */
-@media (max-width: 768px) {
-    .admin-section {
-        padding: 40px 24px 60px;
-        gap: 24px;
-    }
-    
-    .admin-title {
-        font-size: 42px;
-    }
-    
-    .table-container {
-        padding: 12px;
-    }
-    
-    #bookingsTable th, 
-    #bookingsTable td {
-        padding: 12px 8px;
-        font-size: 12px;
-    }
-}
-
-/* =========================================
-   ADMIN DASHBOARD & MODAL STYLES
-   ========================================= */
-
-.action-buttons {
-    display: flex;
-    gap: 8px;
-}
-
-.delete-btn {
-    background-color: #d9534f; /* Red danger color */
-    color: #fff;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    transition: background-color 0.3s ease;
-}
-
-.delete-btn:hover {
-    background-color: #c9302c;
-}
-
-.edit-btn {
-    background-color: transparent;
-    color: var(--cream);
-    border: 1px solid var(--cream);
-    padding: 6px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-}
-
-.edit-btn:hover {
-    background-color: rgba(212, 201, 168, 0.1);
-}
-
-/* ===== EDIT MODAL STYLES ===== */
-.modal-overlay {
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.8);
-    display: none; /* Hidden by default */
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.modal-box {
-    background: #1a1512;
-    padding: 40px;
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.1);
-    width: 90%;
-    max-width: 500px;
-    color: var(--cream);
-}
-
-.modal-title {
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 32px;
-    color: var(--red);
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 14px;
-    letter-spacing: 2px;
-    color: var(--cream);
-}
-
-.form-group input, 
-.form-group select {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 10px;
-    color: white;
-    border-radius: 5px;
-    font-family: sans-serif;
-    outline: none;
-}
-
-.form-group input:focus, 
-.form-group select:focus {
-    border-color: var(--red);
-}
-
-.modal-actions {
-    display: flex;
-    gap: 10px;
-    margin-top: 25px;
-}
-
-.save-btn {
-    background-color: var(--red);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 16px;
-    letter-spacing: 2px;
-    border-radius: 5px;
-    cursor: pointer;
-    flex: 1;
-}
-
-.save-btn:hover {
-    background-color: #a93226;
-}
-
-.cancel-btn {
-    background-color: transparent;
-    color: white;
-    border: 1px solid rgba(255,255,255,0.3);
-    padding: 10px 20px;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 16px;
-    letter-spacing: 2px;
-    border-radius: 5px;
-    cursor: pointer;
-    flex: 1;
-}
-
-.cancel-btn:hover {
-    background-color: rgba(255,255,255,0.05);
-}
-
-/* =========================================
-   PORTFOLIO FILTER & SEARCH BAR
-   ========================================= */
-
-.filter-tabs {
-    display: flex; 
-    flex-wrap: wrap; 
-    align-items: center; 
-    gap: 10px;
-}
-
-#portfolioSearch {
-    background: transparent; 
-    border: 1px solid #555; 
-    color: #fff; 
-    padding: 8px 15px; 
-    font-family: 'Bebas Neue', sans-serif; 
-    font-size: 1rem; 
-    letter-spacing: 1px; 
-    margin-left: auto; /* Pushes the search bar to the right */
-    outline: none; 
-    border-radius: 4px; 
-    min-width: 200px;
-    transition: border-color 0.3s ease;
-}
-
-/* Optional: Adds a nice glow/border color when the user clicks the search bar */
-#portfolioSearch:focus {
-    border-color: #fff; 
-}
-

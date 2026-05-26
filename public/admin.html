@@ -20,9 +20,7 @@
             --font-body: 'Barlow', sans-serif;
         }
 
-
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 
         body {
             background: var(--bg);
@@ -30,7 +28,6 @@
             font-family: var(--font-body);
             min-height: 100vh;
         }
-
 
         /* ===== LOGIN SCREEN ===== */
         #loginScreen {
@@ -42,7 +39,6 @@
             position: relative;
             overflow: hidden;
         }
-
 
         #loginScreen::before {
             content: '3KG';
@@ -58,7 +54,6 @@
             white-space: nowrap;
         }
 
-
         .login-card {
             background: var(--surface);
             border: 1px solid var(--border);
@@ -71,12 +66,10 @@
             animation: slideUp 0.4s ease;
         }
 
-
         @keyframes slideUp {
             from { opacity: 0; transform: translateY(20px); }
             to   { opacity: 1; transform: translateY(0); }
         }
-
 
         .login-logo-row {
             display: flex;
@@ -84,7 +77,6 @@
             gap: 14px;
             margin-bottom: 32px;
         }
-
 
         .login-logo {
             width: 52px;
@@ -94,7 +86,6 @@
             border: 2px solid var(--red);
         }
 
-
         .login-brand {
             font-family: var(--font-display);
             font-size: 22px;
@@ -102,7 +93,6 @@
             color: var(--text);
             line-height: 1.1;
         }
-
 
         .login-brand span {
             display: block;
@@ -114,7 +104,6 @@
             text-transform: uppercase;
         }
 
-
         .login-title {
             font-family: var(--font-display);
             font-size: 30px;
@@ -123,12 +112,10 @@
             color: var(--text);
         }
 
-
         .login-title em {
             font-style: normal;
             color: var(--red);
         }
-
 
         .login-sub {
             font-size: 13px;
@@ -136,11 +123,9 @@
             margin-bottom: 32px;
         }
 
-
         .form-group {
             margin-bottom: 18px;
         }
-
 
         .form-group label {
             display: block;
@@ -151,7 +136,6 @@
             color: var(--muted);
             margin-bottom: 8px;
         }
-
 
         .form-group input {
             width: 100%;
@@ -165,16 +149,13 @@
             transition: border-color 0.2s;
         }
 
-
         .form-group input:focus {
             border-color: var(--red);
         }
 
-
         .input-wrapper {
             position: relative;
         }
-
 
         .toggle-pw {
             position: absolute;
@@ -190,9 +171,7 @@
             line-height: 1;
         }
 
-
         .toggle-pw:hover { color: var(--text); }
-
 
         .login-btn {
             width: 100%;
@@ -208,16 +187,13 @@
             transition: background 0.2s, transform 0.1s;
         }
 
-
         .login-btn:hover { background: var(--red-dark); }
         .login-btn:active { transform: scale(0.98); }
-
 
         .login-btn:disabled {
             background: #555;
             cursor: not-allowed;
         }
-
 
         .login-error {
             margin-top: 14px;
@@ -228,9 +204,7 @@
             display: none;
         }
 
-
         .login-error.show { display: block; animation: shake 0.3s ease; }
-
 
         @keyframes shake {
             0%,100% { transform: translateX(0); }
@@ -238,10 +212,8 @@
             75% { transform: translateX(6px); }
         }
 
-
         /* ===== DASHBOARD ===== */
         #dashboard { display: none; }
-
 
         header {
             background: var(--surface);
@@ -256,13 +228,11 @@
             z-index: 100;
         }
 
-
         .header-left {
             display: flex;
             align-items: center;
             gap: 14px;
         }
-
 
         .logo {
             width: 40px;
@@ -272,20 +242,17 @@
             border: 2px solid var(--red);
         }
 
-
         .brand-name {
             font-family: var(--font-display);
             font-size: 20px;
             letter-spacing: 2px;
         }
 
-
         nav ul {
             list-style: none;
             display: flex;
             gap: 28px;
         }
-
 
         nav ul li a {
             text-decoration: none;
@@ -296,17 +263,14 @@
             transition: color 0.2s;
         }
 
-
         nav ul li a:hover,
         nav ul li a.active { color: var(--red); }
-
 
         .header-right {
             display: flex;
             align-items: center;
             gap: 16px;
         }
-
 
         .admin-badge {
             font-size: 11px;
@@ -318,7 +282,6 @@
             padding: 4px 12px;
             text-transform: uppercase;
         }
-
 
         .logout-btn {
             background: none;
@@ -334,24 +297,20 @@
             transition: all 0.2s;
         }
 
-
         .logout-btn:hover {
             border-color: var(--red);
             color: var(--red);
         }
 
-
         .admin-section {
             padding: 40px 32px;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
-
 
         .admin-header {
             margin-bottom: 32px;
         }
-
 
         .admin-title {
             font-family: var(--font-display);
@@ -361,9 +320,7 @@
             margin-bottom: 6px;
         }
 
-
         .admin-title span { color: var(--red); }
-
 
         .admin-sub {
             font-size: 13px;
@@ -371,25 +328,21 @@
             letter-spacing: 1px;
         }
 
-
         .table-container {
             overflow-x: auto;
             border: 1px solid var(--border);
         }
 
-
         table {
             width: 100%;
             border-collapse: collapse;
-            min-width: 700px;
+            min-width: 900px;
         }
-
 
         thead tr {
             background: var(--surface);
             border-bottom: 2px solid var(--red);
         }
-
 
         th {
             font-family: var(--font-display);
@@ -401,7 +354,6 @@
             white-space: nowrap;
         }
 
-
         td {
             padding: 14px 16px;
             font-size: 14px;
@@ -409,20 +361,16 @@
             vertical-align: middle;
         }
 
-
         tbody tr {
             background: var(--bg);
             transition: background 0.15s;
         }
 
-
         tbody tr:hover { background: var(--surface); }
-
 
         .date-time-cell { display: flex; flex-direction: column; gap: 2px; }
         .b-date { font-weight: 600; font-size: 14px; }
         .b-time { font-size: 12px; color: var(--muted); }
-
 
         .type-badge {
             font-size: 11px;
@@ -433,13 +381,11 @@
             white-space: nowrap;
         }
 
-
         .type-badge.home {
             background: rgba(224,48,48,0.12);
             color: #f06060;
             border: 1px solid rgba(224,48,48,0.3);
         }
-
 
         .type-badge.walk {
             background: rgba(80,200,120,0.1);
@@ -447,9 +393,29 @@
             border: 1px solid rgba(80,200,120,0.3);
         }
 
+        /* Hairstyle badge in admin table */
+        .hairstyle-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(212, 201, 168, 0.1);
+            border: 1px solid rgba(212, 201, 168, 0.2);
+            color: var(--cream);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+
+        .hairstyle-badge img {
+            width: 24px;
+            height: 24px;
+            border-radius: 3px;
+            object-fit: cover;
+        }
 
         .action-buttons { display: flex; gap: 8px; }
-
 
         .edit-btn, .delete-btn {
             font-family: var(--font-display);
@@ -461,19 +427,16 @@
             transition: all 0.2s;
         }
 
-
         .edit-btn {
             background: none;
             border-color: var(--border);
             color: var(--muted);
         }
 
-
         .edit-btn:hover {
             border-color: var(--text);
             color: var(--text);
         }
-
 
         .delete-btn {
             background: none;
@@ -481,11 +444,9 @@
             color: #f06060;
         }
 
-
         .delete-btn:hover {
             background: rgba(224,48,48,0.1);
         }
-
 
         /* ===== MODAL ===== */
         .modal-overlay {
@@ -498,17 +459,17 @@
             justify-content: center;
         }
 
-
         .modal-box {
             background: var(--surface);
             border: 1px solid var(--border);
             border-top: 3px solid var(--red);
             padding: 36px;
             width: 100%;
-            max-width: 480px;
+            max-width: 520px;
             animation: slideUp 0.25s ease;
+            max-height: 90vh;
+            overflow-y: auto;
         }
-
 
         .modal-title {
             font-family: var(--font-display);
@@ -517,14 +478,21 @@
             margin-bottom: 24px;
         }
 
-
         .modal-title span { color: var(--red); }
-
 
         .modal-box .form-group {
             margin-bottom: 16px;
         }
 
+        .modal-box .form-group label {
+            display: block;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 8px;
+        }
 
         .modal-box .form-group input,
         .modal-box .form-group select {
@@ -539,24 +507,20 @@
             transition: border-color 0.2s;
         }
 
-
         .modal-box .form-group input:focus,
         .modal-box .form-group select:focus {
             border-color: var(--red);
         }
 
-
         .modal-box .form-group select option {
             background: var(--surface2);
         }
-
 
         .modal-actions {
             display: flex;
             gap: 12px;
             margin-top: 24px;
         }
-
 
         .cancel-btn, .save-btn {
             flex: 1;
@@ -569,28 +533,24 @@
             transition: all 0.2s;
         }
 
-
         .cancel-btn {
             background: var(--surface2);
             color: var(--muted);
             border: 1px solid var(--border);
         }
 
-
         .cancel-btn:hover { color: var(--text); border-color: var(--text); }
-
 
         .save-btn {
             background: var(--red);
             color: #fff;
         }
 
-
         .save-btn:hover { background: var(--red-dark); }
     </style>
+<base target="_blank">
 </head>
 <body>
-
 
     <!-- ===== LOGIN SCREEN ===== -->
     <div id="loginScreen">
@@ -603,16 +563,13 @@
                 </div>
             </div>
 
-
             <h1 class="login-title">SIGN <em>IN</em></h1>
             <p class="login-sub">Enter your credentials to access the dashboard</p>
-
 
             <div class="form-group">
                 <label>Username</label>
                 <input type="text" id="loginUser" placeholder="admin" autocomplete="username" />
             </div>
-
 
             <div class="form-group">
                 <label>Password</label>
@@ -622,16 +579,13 @@
                 </div>
             </div>
 
-
             <button class="login-btn" id="loginBtn" onclick="handleLogin()">ACCESS DASHBOARD</button>
-
 
             <div class="login-error" id="loginError">
                 ✕ &nbsp; Incorrect username or password.
             </div>
         </div>
     </div>
-
 
     <!-- ===== DASHBOARD ===== -->
     <div id="dashboard">
@@ -652,13 +606,11 @@
             </div>
         </header>
 
-
         <section class="admin-section">
             <div class="admin-header">
                 <h1 class="admin-title">ADMIN <span>DASHBOARD</span></h1>
-                <p class="admin-sub">Manage your walk-ins and home visits</p>
+                <p class="admin-sub">Manage your walk-ins, home visits, and hairstyle bookings</p>
             </div>
-
 
             <div class="table-container">
                 <table id="bookingsTable">
@@ -668,6 +620,7 @@
                             <th>Name</th>
                             <th>Phone</th>
                             <th>Type</th>
+                            <th>Hairstyle</th>
                             <th>Location / Branch</th>
                             <th>Details</th>
                             <th>Action</th>
@@ -675,14 +628,13 @@
                     </thead>
                     <tbody id="bookingsBody">
                         <tr>
-                            <td colspan="7" style="text-align: center; padding: 40px; color: var(--muted);">Loading bookings...</td>
+                            <td colspan="8" style="text-align: center; padding: 40px; color: var(--muted);">Loading bookings...</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
     </div>
-
 
     <!-- ===== EDIT MODAL ===== -->
     <div class="modal-overlay" id="editModal">
@@ -715,6 +667,21 @@
                 </select>
             </div>
             <div class="form-group">
+                <label>Hairstyle</label>
+                <select id="editHairstyle">
+                    <option value="">Select Hairstyle</option>
+                    <option value="Classic Fade">Classic Fade</option>
+                    <option value="Low Taper">Low Taper</option>
+                    <option value="Mid Fade">Mid Fade</option>
+                    <option value="High Fade">High Fade</option>
+                    <option value="Buzz Cut">Buzz Cut</option>
+                    <option value="Pompadour">Pompadour</option>
+                    <option value="Undercut">Undercut</option>
+                    <option value="Textured Crop">Textured Crop</option>
+                    <option value="Slick Back">Slick Back</option>
+                </select>
+            </div>
+            <div class="form-group">
                 <label>Location / Branch</label>
                 <input type="text" id="editLocation">
             </div>
@@ -725,20 +692,17 @@
         </div>
     </div>
 
-
     <script>
-        // ===== CREDENTIALS (change these to your real creds) =====
+        // ===== CREDENTIALS =====
         const ADMIN_CREDENTIALS = [
             { username: 'admin', password: '3kg2026' },
             { username: '3kgadmin', password: '2026' }
         ];
 
-
-        // ===== SESSION (persists on refresh) =====
+        // ===== SESSION =====
         function isLoggedIn() {
             return sessionStorage.getItem('3kg_admin_auth') === 'true';
         }
-
 
         function handleLogin() {
             const user = document.getElementById('loginUser').value.trim();
@@ -746,15 +710,12 @@
             const errorEl = document.getElementById('loginError');
             const btn = document.getElementById('loginBtn');
 
-
             const valid = ADMIN_CREDENTIALS.some(c => c.username === user && c.password === pass);
-
 
             if (valid) {
                 sessionStorage.setItem('3kg_admin_auth', 'true');
                 btn.textContent = 'UNLOCKING...';
                 btn.disabled = true;
-
 
                 setTimeout(() => {
                     document.getElementById('loginScreen').style.display = 'none';
@@ -763,13 +724,12 @@
                 }, 500);
             } else {
                 errorEl.classList.remove('show');
-                void errorEl.offsetWidth; // restart animation
+                void errorEl.offsetWidth;
                 errorEl.classList.add('show');
                 document.getElementById('loginPass').value = '';
                 document.getElementById('loginPass').focus();
             }
         }
-
 
         function handleLogout() {
             sessionStorage.removeItem('3kg_admin_auth');
@@ -781,7 +741,6 @@
             document.getElementById('loginBtn').textContent = 'ACCESS DASHBOARD';
             document.getElementById('loginBtn').disabled = false;
         }
-
 
         function togglePw() {
             const input = document.getElementById('loginPass');
@@ -795,16 +754,12 @@
             }
         }
 
-
-        // Allow Enter key on login form
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Enter' && document.getElementById('loginScreen').style.display !== 'none') {
                 handleLogin();
             }
         });
 
-
-        // ===== AUTO-LOGIN if session exists =====
         window.addEventListener('DOMContentLoaded', () => {
             if (isLoggedIn()) {
                 document.getElementById('loginScreen').style.display = 'none';
@@ -813,32 +768,41 @@
             }
         });
 
-
         // ===== BOOKINGS =====
         let allBookings = [];
 
+        // Hairstyle image mapping
+        const hairstyleImages = {
+            'Classic Fade': 'images/hc1.jpg',
+            'Low Taper': 'images/hc2.jpg',
+            'Mid Fade': 'images/hc3.jpg',
+            'High Fade': 'images/hc4.jpg',
+            'Buzz Cut': 'images/hc5.jpg',
+            'Pompadour': 'images/hc6.jpg',
+            'Undercut': 'images/hc7.jpg',
+            'Textured Crop': 'images/hc8.jpg',
+            'Slick Back': 'images/hc9.jpg'
+        };
 
         async function fetchBookings() {
             try {
                 const response = await fetch('https://threekg-babershop.onrender.com/api/bookings');
                 allBookings = await response.json();
 
-
                 const tbody = document.getElementById('bookingsBody');
                 tbody.innerHTML = '';
 
-
                 if (allBookings.length === 0) {
-                    tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; padding: 40px; color: var(--muted);">No bookings found.</td></tr>';
+                    tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; padding: 40px; color: var(--muted);">No bookings found.</td></tr>';
                     return;
                 }
-
 
                 allBookings.forEach(booking => {
                     const tr = document.createElement('tr');
                     const location = booking.visitType === 'Home Visit' ? booking.address : booking.branch;
                     const bookingId = booking._id || booking.id;
-
+                    const hairstyle = booking.hairstyle || 'Not specified';
+                    const hairstyleImg = hairstyleImages[hairstyle] || '';
 
                     tr.innerHTML = `
                         <td>
@@ -854,6 +818,12 @@
                                 ${booking.visitType || 'N/A'}
                             </span>
                         </td>
+                        <td>
+                            <span class="hairstyle-badge">
+                                ${hairstyleImg ? `<img src="${hairstyleImg}" alt="${hairstyle}" onerror="this.style.display='none'">` : ''}
+                                ${hairstyle}
+                            </span>
+                        </td>
                         <td>${location || 'N/A'}</td>
                         <td>${booking.details || '-'}</td>
                         <td>
@@ -867,19 +837,16 @@
                 });
             } catch (error) {
                 console.error('Error fetching bookings:', error);
-                document.getElementById('bookingsBody').innerHTML = `<tr><td colspan="7" style="text-align: center; color: var(--red); padding: 40px;">Failed to load bookings. Make sure the server is running.</td></tr>`;
+                document.getElementById('bookingsBody').innerHTML = `<tr><td colspan="8" style="text-align: center; color: var(--red); padding: 40px;">Failed to load bookings. Make sure the server is running.</td></tr>`;
             }
         }
-
 
         // ===== EDIT MODAL =====
         function openModal(id) {
             const booking = allBookings.find(b => (b._id || b.id) === id);
             if (!booking) return;
 
-
             const locationStr = booking.visitType === 'Home Visit' ? booking.address : booking.branch;
-
 
             document.getElementById('editId').value = id;
             document.getElementById('editName').value = booking.name || '';
@@ -887,23 +854,20 @@
             document.getElementById('editDate').value = booking.date || '';
             document.getElementById('editTime').value = booking.time || '';
             document.getElementById('editType').value = booking.visitType || 'Walk-in';
+            document.getElementById('editHairstyle').value = booking.hairstyle || '';
             document.getElementById('editLocation').value = locationStr || '';
-
 
             document.getElementById('editModal').style.display = 'flex';
         }
-
 
         function closeModal() {
             document.getElementById('editModal').style.display = 'none';
         }
 
-
         async function saveBooking() {
             const id = document.getElementById('editId').value;
             const visitType = document.getElementById('editType').value;
             const locationInput = document.getElementById('editLocation').value;
-
 
             const updatedData = {
                 name: document.getElementById('editName').value,
@@ -911,10 +875,10 @@
                 date: document.getElementById('editDate').value,
                 time: document.getElementById('editTime').value,
                 visitType: visitType,
+                hairstyle: document.getElementById('editHairstyle').value,
                 branch: visitType === 'Walk-in' ? locationInput : '',
                 address: visitType === 'Home Visit' ? locationInput : ''
             };
-
 
             try {
                 const response = await fetch(`https://threekg-babershop.onrender.com/api/bookings/${id}`, {
@@ -922,7 +886,6 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(updatedData)
                 });
-
 
                 if (response.ok) {
                     closeModal();
@@ -935,7 +898,6 @@
                 alert('An error occurred.');
             }
         }
-
 
         // ===== DELETE =====
         async function deleteBooking(id) {
@@ -957,4 +919,3 @@
     </script>
 </body>
 </html>
-
