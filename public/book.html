@@ -7,6 +7,348 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="icon" href="images/339888103_617339846927129_7791889255149775750_n.jpg" />
     <title>3KG Barbershop — BOOK NOW</title>
+    <style>
+        /* ===== BOOKING PAGE — matches your existing style.css theme ===== */
+
+        .booking-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 60px 120px 80px;
+            align-items: start;
+        }
+
+        /* ===== LEFT: SERVICE CARD ===== */
+        .booking-service-card {
+            background: #1a1512;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 16px;
+            padding: 40px;
+        }
+
+        .booking-service-eyebrow {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 12px;
+            color: var(--red);
+            letter-spacing: 3px;
+            margin-bottom: 8px;
+        }
+
+        .booking-service-name {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 32px;
+            color: var(--cream);
+            letter-spacing: 3px;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .booking-service-desc {
+            font-family: sans-serif;
+            font-size: 12px;
+            color: rgba(212, 201, 168, 0.6);
+            line-height: 1.7;
+            letter-spacing: 0.5px;
+            margin-bottom: 24px;
+        }
+
+        .booking-service-img {
+            width: 100%;
+            height: 360px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+
+        .booking-service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .booking-service-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .booking-price-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .booking-price {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 36px;
+            color: var(--red);
+            letter-spacing: 2px;
+            line-height: 1;
+        }
+
+        .booking-price-label {
+            font-family: sans-serif;
+            font-size: 10px;
+            color: rgba(212, 201, 168, 0.5);
+            letter-spacing: 2px;
+        }
+
+        .booking-time {
+            font-family: sans-serif;
+            font-size: 11px;
+            color: rgba(212, 201, 168, 0.4);
+            letter-spacing: 1px;
+        }
+
+        .learn-more-btn {
+            background: transparent;
+            color: var(--cream);
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 14px;
+            letter-spacing: 2px;
+            padding: 10px 24px;
+            border: 1.5px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .learn-more-btn:hover {
+            border-color: var(--cream);
+            background: rgba(255,255,255,0.05);
+        }
+
+        /* ===== RIGHT: FORM CARD ===== */
+        .booking-form-card {
+            background: #1a1512;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 16px;
+            padding: 40px;
+        }
+
+        .booking-form-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .booking-form-title {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 48px;
+            color: var(--cream);
+            letter-spacing: 6px;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .booking-form-sub {
+            font-family: sans-serif;
+            font-size: 11px;
+            color: rgba(212, 201, 168, 0.5);
+            letter-spacing: 2px;
+        }
+
+        /* Selected hairstyle badge */
+        .selected-hairstyle-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(192, 57, 43, 0.15);
+            border: 1px solid var(--red);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-family: sans-serif;
+            font-size: 13px;
+            color: var(--red);
+            margin-bottom: 20px;
+        }
+
+        .selected-hairstyle-badge::before {
+            content: "✓";
+            font-weight: bold;
+        }
+
+        /* ===== FORM ===== */
+        .booking-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .booking-form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .booking-form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .booking-form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .booking-form-group label {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 11px;
+            color: var(--red);
+            letter-spacing: 3px;
+        }
+
+        .booking-input-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 8px;
+            padding: 12px 14px;
+            transition: border-color 0.2s;
+        }
+
+        .booking-input-wrap:focus-within {
+            border-color: var(--red);
+        }
+
+        .booking-input-wrap input,
+        .booking-input-wrap select {
+            background: transparent;
+            border: none;
+            color: var(--cream);
+            font-family: sans-serif;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            width: 100%;
+            outline: none;
+        }
+
+        .booking-input-wrap input::placeholder {
+            color: rgba(212, 201, 168, 0.3);
+        }
+
+        .booking-input-wrap select option {
+            background: #1a1512;
+            color: var(--cream);
+        }
+
+        .booking-textarea-wrap {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 8px;
+            padding: 12px 14px;
+            transition: border-color 0.2s;
+        }
+
+        .booking-textarea-wrap:focus-within {
+            border-color: var(--red);
+        }
+
+        .booking-textarea-wrap textarea {
+            background: transparent;
+            border: none;
+            color: var(--cream);
+            font-family: sans-serif;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            width: 100%;
+            min-height: 80px;
+            resize: none;
+            outline: none;
+        }
+
+        .booking-textarea-wrap textarea::placeholder {
+            color: rgba(212, 201, 168, 0.3);
+        }
+
+        .booking-char-count {
+            font-family: sans-serif;
+            font-size: 10px;
+            color: rgba(212, 201, 168, 0.25);
+            text-align: right;
+            margin-top: 4px;
+        }
+
+        .hairstyle-hint {
+            font-family: sans-serif;
+            font-size: 11px;
+            color: rgba(212, 201, 168, 0.4);
+            margin-top: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .hairstyle-hint a {
+            color: var(--red);
+            text-decoration: none;
+        }
+
+        .hairstyle-hint a:hover {
+            text-decoration: underline;
+        }
+
+        .booking-submit-btn {
+            width: 100%;
+            background-color: var(--red);
+            color: white;
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 18px;
+            letter-spacing: 4px;
+            padding: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 8px;
+        }
+
+        .booking-submit-btn:hover {
+            background-color: #a93226;
+        }
+
+        /* Date/Time input styling */
+        .booking-input-wrap input[type="date"]::-webkit-calendar-picker-indicator,
+        .booking-input-wrap input[type="time"]::-webkit-calendar-picker-indicator {
+            filter: invert(0.7);
+            cursor: pointer;
+        }
+
+        /* ===== MOBILE RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .booking-section {
+                grid-template-columns: 1fr;
+                padding: 40px 24px 60px;
+                gap: 24px;
+            }
+
+            .booking-service-card,
+            .booking-form-card {
+                padding: 28px 24px;
+            }
+
+            .booking-service-img {
+                height: 240px;
+            }
+
+            .booking-form-title {
+                font-size: 36px;
+                letter-spacing: 4px;
+            }
+
+            .booking-form-row {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .booking-service-name {
+                font-size: 28px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -14,7 +356,6 @@
 <header>
     <img class="logo" src="images/339888103_617339846927129_7791889255149775750_n.jpg" alt="logo">
 
-    <!-- Desktop Nav -->
     <nav class="desktop-nav">
         <ul>
             <li><a href="index.html">HOME</a></li>
@@ -27,7 +368,6 @@
 
     <a href="book.html" class="book-btn desktop-book">BOOK NOW</a>
 
-    <!-- Hamburger Button -->
     <button class="hamburger-btn" onclick="toggleMobileNav()">
         <span></span>
         <span></span>
@@ -35,7 +375,6 @@
     </button>
 </header>
 
-<!-- ===== MOBILE NAV DRAWER ===== -->
 <div class="mobile-nav-overlay" onclick="toggleMobileNav()"></div>
 <div class="mobile-nav" id="mobileNav">
     <button class="mobile-nav-close" onclick="toggleMobileNav()">×</button>
@@ -53,7 +392,7 @@
 
     <div class="booking-service-card">
         <p class="booking-service-eyebrow">SIGNATURE SERVICES</p>
-        <h2 class="booking-service-name">FADE AND TAPER</h2>
+        <h2 class="booking-service-name" id="selectedHairstyleTitle">FADE AND TAPER</h2>
         <p class="booking-service-desc">Our flagship service. A clean precision fade from skin to length, finished with sharp line-up work and hot towel prep. The standard every barber at 3KG is measured by.</p>
 
         <div class="booking-service-img">
@@ -66,7 +405,7 @@
                 <span class="booking-price-label">/SESSION</span>
                 <span class="booking-time">30 - 45 Minutes</span>
             </div>
-            <button class="learn-more-btn">LEARN MORE</button>
+            <button class="learn-more-btn"><a href = "our_work.html" style="text-decoration: none; color: inherit;">  CHANGE HAIRSTYLE</a></button>
         </div>
     </div>
 
@@ -74,6 +413,11 @@
         <div class="booking-form-header">
             <h2 class="booking-form-title">BOOK NOW!</h2>
             <p class="booking-form-sub">BOOK FASTER, LOOK SHARPER.</p>
+        </div>
+
+        <!-- Selected hairstyle badge (hidden by default) -->
+        <div class="selected-hairstyle-badge" id="selectedHairstyleBadge" style="display: none;">
+            <span id="selectedHairstyleName"></span>
         </div>
 
         <form class="booking-form" id="bookingForm">
@@ -106,7 +450,7 @@
                     </div>
                 </div>
             </div>
-            <!-- ===== HAIRSTYLE SELECTION ===== -->
+
             <div class="booking-form-group full">
                 <label for="booking-hairstyle">CHOOSE YOUR HAIRSTYLE</label>
                 <div class="booking-input-wrap">
@@ -145,7 +489,6 @@
                 </div>
             </div>
 
-            <!-- Branch Selection (shown for Walk In) -->
             <div class="booking-form-group full" id="branchField">
                 <label for="booking-branch">PREFERRED BRANCH</label>
                 <div class="booking-input-wrap">
@@ -157,7 +500,6 @@
                 </div>
             </div>
 
-            <!-- Address Input (shown for Home Visit) -->
             <div class="booking-form-group full" id="addressField" style="display: none;">
                 <label for="booking-address">YOUR ADDRESS</label>
                 <div class="booking-input-wrap">
@@ -183,6 +525,66 @@ function toggleMobileNav() {
     document.querySelector('.mobile-nav-overlay').classList.toggle('active');
 }
 
+// ===== READ URL PARAMETERS AND PRE-SELECT HAIRSTYLE =====
+function getUrlParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+}
+
+function initHairstyleFromUrl() {
+    const styleName = getUrlParam('style');
+    const styleImg = getUrlParam('img');
+
+    if (styleName) {
+        const select = document.getElementById('booking-hairstyle');
+        const imgPreview = document.getElementById('selectedHairstyleImg');
+        const badge = document.getElementById('selectedHairstyleBadge');
+        const badgeName = document.getElementById('selectedHairstyleName');
+
+        // Decode the URL parameter
+        const decodedName = decodeURIComponent(styleName).replace(/\+/g, ' ');
+
+        // Find and select the matching option
+        let found = false;
+        for (let i = 0; i < select.options.length; i++) {
+            if (select.options[i].value === decodedName) {
+                select.selectedIndex = i;
+                found = true;
+                break;
+            }
+        }
+
+        // Update preview image
+        if (styleImg) {
+            const decodedImg = decodeURIComponent(styleImg);
+            imgPreview.src = decodedImg;
+            imgPreview.alt = decodedName;
+        } else if (found) {
+            const selectedOption = select.options[select.selectedIndex];
+            const imgSrc = selectedOption.getAttribute('data-img');
+            if (imgSrc) {
+                imgPreview.src = imgSrc;
+                imgPreview.alt = selectedOption.value;
+            }
+        }
+
+        // Update the service card title to match selected hairstyle
+        const title = document.getElementById('selectedHairstyleTitle');
+        if (title && decodedName) {
+            title.textContent = decodedName.toUpperCase();
+        }
+
+        // Show selected badge
+        if (found) {
+            badge.style.display = 'inline-flex';
+            badgeName.textContent = 'Style: ' + select.options[select.selectedIndex].value;
+        }
+    }
+}
+
+// Run on page load
+initHairstyleFromUrl();
+
 // Toggle between Branch and Address fields based on visit type
 document.getElementById('booking-visit').addEventListener('change', function() {
     const branchField = document.getElementById('branchField');
@@ -203,13 +605,30 @@ document.getElementById('booking-visit').addEventListener('change', function() {
     }
 });
 
-// Update preview image when hairstyle is selected
+// Update preview image and title when hairstyle is selected manually
 document.getElementById('booking-hairstyle').addEventListener('change', function() {
     const selectedOption = this.options[this.selectedIndex];
     const imgSrc = selectedOption.getAttribute('data-img');
+    const title = document.getElementById('selectedHairstyleTitle');
+
     if (imgSrc) {
         document.getElementById('selectedHairstyleImg').src = imgSrc;
         document.getElementById('selectedHairstyleImg').alt = selectedOption.value;
+    }
+
+    // Update the service card title
+    if (title && selectedOption.value) {
+        title.textContent = selectedOption.value.toUpperCase();
+    }
+
+    // Update badge
+    const badge = document.getElementById('selectedHairstyleBadge');
+    const badgeName = document.getElementById('selectedHairstyleName');
+    if (this.value) {
+        badge.style.display = 'inline-flex';
+        badgeName.textContent = 'Style: ' + selectedOption.value;
+    } else {
+        badge.style.display = 'none';
     }
 });
 
@@ -236,7 +655,6 @@ document.getElementById('bookingForm').addEventListener('submit', async function
         details: document.getElementById('booking-details').value
     };
 
-    // Add branch or address depending on visit type
     if (visitType === 'Home Visit') {
         bookingData.address = document.getElementById('booking-address').value;
     } else {
@@ -255,10 +673,11 @@ document.getElementById('bookingForm').addEventListener('submit', async function
         if (result.success) {
             alert('Thank you for your booking! Your chosen hairstyle: ' + hairstyle);
             this.reset();
-            // Reset fields visibility
             document.getElementById('branchField').style.display = 'block';
             document.getElementById('addressField').style.display = 'none';
             document.getElementById('selectedHairstyleImg').src = 'images/hc1.jpg';
+            document.getElementById('selectedHairstyleTitle').textContent = 'FADE AND TAPER';
+            document.getElementById('selectedHairstyleBadge').style.display = 'none';
             document.querySelector('.booking-char-count').textContent = '0/500';
         } else {
             alert('Error: ' + result.error);

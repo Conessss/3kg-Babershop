@@ -7,6 +7,265 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="icon" href="images/339888103_617339846927129_7791889255149775750_n.jpg" />
     <title>3KG Barbershop — OUR WORK</title>
+    <style>
+        /* ===== OUR WORK PAGE ONLY — matches your existing style.css theme ===== */
+
+        /* Hero section */
+        .work-hero {
+            padding: 60px 120px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-eyebrow {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 15px;
+            color: var(--red);
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+        }
+
+        .hero-title {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 110px;
+            color: var(--cream);
+            line-height: 0.9;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .hero-title span {
+            color: var(--red);
+        }
+
+        .hero-sub {
+            font-family: sans-serif;
+            font-size: 14px;
+            color: rgba(212, 201, 168, 0.6);
+            line-height: 1.8;
+            letter-spacing: 0.5px;
+            max-width: 420px;
+        }
+
+        .hero-watermark {
+            position: absolute;
+            right: -20px;
+            top: 20px;
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 340px;
+            color: rgba(192, 57, 43, 0.06);
+            line-height: 1;
+            pointer-events: none;
+            user-select: none;
+            letter-spacing: -10px;
+        }
+
+        /* ===== FIXED: Hairstyle cards with proper sizing ===== */
+        .hairstyles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 0 120px;
+        }
+
+        .hairstyle-card {
+            background: #1a1512;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .hairstyle-card:hover {
+            border-color: var(--red);
+            transform: translateY(-4px);
+        }
+
+        /* FIXED: Constrained image height */
+        .hairstyle-img-wrap {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .hairstyle-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .hairstyle-card:hover .hairstyle-img-wrap img {
+            transform: scale(1.04);
+        }
+
+        .hairstyle-info {
+            padding: 20px 22px 24px;
+        }
+
+        .hairstyle-name {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 22px;
+            color: var(--cream);
+            letter-spacing: 3px;
+            margin-bottom: 6px;
+        }
+
+        .hairstyle-desc {
+            font-family: sans-serif;
+            font-size: 12px;
+            color: rgba(212, 201, 168, 0.55);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .hairstyle-book-btn {
+            display: inline-block;
+            background: transparent;
+            color: var(--red);
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 13px;
+            letter-spacing: 2px;
+            padding: 8px 20px;
+            border: 1.5px solid var(--red);
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .hairstyle-book-btn:hover {
+            background: var(--red);
+            color: white;
+        }
+
+        /* ===== FIXED: Demo reel with proper sizing ===== */
+        .project-demo {
+            margin: 60px auto 0;
+            padding: 40px 120px 0;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            max-width: 900px;
+        }
+
+        .project-demo h4 {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 24px;
+            color: var(--cream);
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: #000;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* ===== NEXT CTA ===== */
+        .next-cta {
+            padding: 70px 120px 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255,255,255,0.07);
+        }
+
+        .next-title {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 80px;
+            color: var(--cream);
+            letter-spacing: 3px;
+            line-height: 1;
+        }
+
+        .next-title.red {
+            color: var(--red);
+        }
+
+        .next-sub {
+            font-family: sans-serif;
+            font-size: 14px;
+            color: rgba(212, 201, 168, 0.45);
+            letter-spacing: 1.5px;
+            margin-top: 10px;
+        }
+
+        .next-btns {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        /* ===== MOBILE RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .work-hero {
+                padding: 40px 24px 30px;
+            }
+
+            .hero-title {
+                font-size: 64px;
+            }
+
+            .hero-watermark {
+                font-size: 180px;
+            }
+
+            .hairstyles-grid {
+                grid-template-columns: 1fr;
+                padding: 0 24px;
+                gap: 16px;
+            }
+
+            .hairstyle-img-wrap {
+                height: 180px;
+            }
+
+            .project-demo {
+                padding: 30px 24px 0;
+                margin-top: 40px;
+            }
+
+            .project-demo h4 {
+                font-size: 20px;
+            }
+
+            .next-cta {
+                padding: 50px 24px 60px;
+                flex-direction: column;
+                text-align: center;
+                gap: 24px;
+            }
+
+            .next-title {
+                font-size: 48px;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .hairstyles-grid {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 0 40px;
+            }
+
+            .work-hero {
+                padding: 60px 40px 40px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -57,8 +316,6 @@
 
 <!-- ===== HAIRSTYLE GALLERY ===== -->
 <section class="portfolio-section full-width">
-<!-- 
-    <p class="portfolio-label">HAIRSTYLES</p> -->
 
     <div class="hairstyles-grid">
 
@@ -75,115 +332,118 @@
         </div>
 
         <!-- Hairstyle 2: Low Taper -->
-        <div class="hairstyle-card" data-name="Low Taper" data-img="images/hc2.jpg">
+        <div class="hairstyle-card" data-name="Low Taper" data-img="images/hc1.1.jpg">
             <div class="hairstyle-img-wrap">
                 <img src="images/hc1.1.jpg" alt="Low Taper">
             </div>
             <div class="hairstyle-info">
                 <h3 class="hairstyle-name">LOW TAPER</h3>
                 <p class="hairstyle-desc">Subtle taper starting low for a professional look.</p>
-                <a href="book.html?style=Low+Taper&img=images/hc2.jpg" class="hairstyle-book-btn">BOOK THIS STYLE</a>
+                <a href="book.html?style=Low+Taper&img=images/hc1.1.jpg" class="hairstyle-book-btn">BOOK THIS STYLE</a>
             </div>
         </div>
 
         <!-- Hairstyle 3: Mid Fade -->
-        <div class="hairstyle-card" data-name="Mid Fade" data-img="images/hc3.jpg">
+        <div class="hairstyle-card" data-name="Mid Fade" data-img="images/hc2.jpg">
             <div class="hairstyle-img-wrap">
                 <img src="images/hc2.jpg" alt="Mid Fade">
             </div>
             <div class="hairstyle-info">
                 <h3 class="hairstyle-name">MID FADE</h3>
                 <p class="hairstyle-desc">Versatile fade starting at the temples for a balanced look.</p>
-                <a href="book.html?style=Mid+Fade&img=images/hc3.jpg" class="hairstyle-book-btn">BOOK THIS STYLE</a>
+                <a href="book.html?style=Mid+Fade&img=images/hc2.jpg" class="hairstyle-book-btn">BOOK THIS STYLE</a>
             </div>
         </div>
 
         <!-- Hairstyle 4: High Fade -->
-        <div class="hairstyle-card" data-name="High Fade" data-img="images/hc4.jpg">
+        <div class="hairstyle-card" data-name="High Fade" data-img="images/hc2.2.jpg">
             <div class="hairstyle-img-wrap">
                 <img src="images/hc2.2.jpg" alt="High Fade">
             </div>
             <div class="hairstyle-info">
                 <h3 class="hairstyle-name">HIGH FADE</h3>
                 <p class="hairstyle-desc">Bold fade starting high for a sharp, modern edge.</p>
-                <a href="book.html?style=High+Fade&img=images/hc4.jpg" class="hairstyle-book-btn">BOOK THIS STYLE</a>
+                <a href="book.html?style=High+Fade&img=images/hc2.2.jpg" class="hairstyle-book-btn">BOOK THIS STYLE</a>
             </div>
         </div>
 
         <!-- Hairstyle 5: Buzz Cut -->
-        <div class="hairstyle-card" data-name="Buzz Cut" data-img="images/hc5.jpg">
+        <div class="hairstyle-card" data-name="Buzz Cut" data-img="images/new_img h1.jpg">
             <div class="hairstyle-img-wrap">
                 <img src="images/new_img h1.jpg" alt="Buzz Cut">
             </div>
             <div class="hairstyle-info">
                 <h3 class="hairstyle-name">BUZZ CUT</h3>
                 <p class="hairstyle-desc">Short, clean, and low maintenance. Always sharp.</p>
-                <a href="book.html?style=Buzz+Cut&img=images/hc5.jpg" class="hairstyle-book-btn">BOOK THIS STYLE</a>
+                <a href="book.html?style=Buzz+Cut&img=images/new_img h1.jpg" class="hairstyle-book-btn">BOOK THIS STYLE</a>
             </div>
         </div>
 
         <!-- Hairstyle 6: Pompadour -->
-        <div class="hairstyle-card" data-name="Pompadour" data-img="images/hc6.jpg">
+        <div class="hairstyle-card" data-name="Pompadour" data-img="images/hc10.jpg">
             <div class="hairstyle-img-wrap">
                 <img src="images/hc10.jpg" alt="Pompadour">
             </div>
             <div class="hairstyle-info">
                 <h3 class="hairstyle-name">POMPADOUR</h3>
                 <p class="hairstyle-desc">Classic volume on top with a clean fade on the sides.</p>
-                <a href="book.html?style=Pompadour&img=images/hc6.jpg" class="hairstyle-book-btn">BOOK THIS STYLE</a>
+                <a href="book.html?style=Pompadour&img=images/hc10.jpg" class="hairstyle-book-btn">BOOK THIS STYLE</a>
             </div>
         </div>
 
         <!-- Hairstyle 7: Undercut -->
-        <div class="hairstyle-card" data-name="Undercut" data-img="images/hc7.jpg">
+        <div class="hairstyle-card" data-name="Undercut" data-img="images/hc11.jpg">
             <div class="hairstyle-img-wrap">
                 <img src="images/hc11.jpg" alt="Undercut">
             </div>
             <div class="hairstyle-info">
                 <h3 class="hairstyle-name">UNDERCUT</h3>
                 <p class="hairstyle-desc">Sharp contrast between long top and shaved sides.</p>
-                <a href="book.html?style=Undercut&img=images/hc7.jpg" class="hairstyle-book-btn">BOOK THIS STYLE</a>
+                <a href="book.html?style=Undercut&img=images/hc11.jpg" class="hairstyle-book-btn">BOOK THIS STYLE</a>
             </div>
         </div>
 
         <!-- Hairstyle 8: Textured Crop -->
-        <div class="hairstyle-card" data-name="Textured Crop" data-img="images/hc8.jpg">
+        <div class="hairstyle-card" data-name="Textured Crop" data-img="images/new_img h2.jpg">
             <div class="hairstyle-img-wrap">
                 <img src="images/new_img h2.jpg" alt="Textured Crop">
             </div>
             <div class="hairstyle-info">
                 <h3 class="hairstyle-name">TEXTURED CROP</h3>
                 <p class="hairstyle-desc">Messy, textured top with a tight fade. Modern and stylish.</p>
-                <a href="book.html?style=Textured+Crop&img=images/hc8.jpg" class="hairstyle-book-btn">BOOK THIS STYLE</a>
+                <a href="book.html?style=Textured+Crop&img=images/new_img h2.jpg" class="hairstyle-book-btn">BOOK THIS STYLE</a>
             </div>
         </div>
 
         <!-- Hairstyle 9: Slick Back -->
-        <div class="hairstyle-card" data-name="Slick Back" data-img="images/hc9.jpg">
+        <div class="hairstyle-card" data-name="Slick Back" data-img="images/new_img h4 .jpg">
             <div class="hairstyle-img-wrap">
                 <img src="images/new_img h4 .jpg" alt="Slick Back">
             </div>
             <div class="hairstyle-info">
                 <h3 class="hairstyle-name">SLICK BACK</h3>
                 <p class="hairstyle-desc">Sleek, polished look combed back with precision.</p>
-                <a href="book.html?style=Slick+Back&img=images/hc9.jpg" class="hairstyle-book-btn">BOOK THIS STYLE</a>
+                <a href="book.html?style=Slick+Back&img=images/new_img h4 .jpg" class="hairstyle-book-btn">BOOK THIS STYLE</a>
             </div>
         </div>
 
+        
+
     </div>
 
-<div class="project-demo">
-    <h4>PROJECT DEMO REEL</h4>
-    <div class="video-wrapper">
-        <iframe 
-            src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" 
-            title="3KG Barbershop Demo Reel"
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen>
-        </iframe>
+    <!-- FIXED: Demo reel with constrained size -->
+    <div class="project-demo">
+        <h4>PROJECT DEMO REEL</h4>
+        <div class="video-wrapper">
+            <iframe 
+                src="https://youtu.be/lRx7rHfjMnA?si=Dp8v4O33GjG2rTaI"  <!-- TODO: Replace YOUR_VIDEO_ID_HERE with your actual YouTube video ID --> 
+                title="3KG Barbershop Demo Reel"
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+            </iframe>
+        </div>
     </div>
-</div>
 
 </section>
 
