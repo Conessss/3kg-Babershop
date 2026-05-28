@@ -2263,7 +2263,214 @@ nav ul li a.active {
         padding: 14px;
     }
 }
+/* ===========================
+   ADMIN DASHBOARD MOBILE
+   =========================== */
 
+@media (max-width: 768px) {
+
+    /* ===== LOGIN SCREEN ===== */
+    #loginScreen::before {
+        font-size: 60vw;
+    }
+
+    .login-card {
+        padding: 36px 24px 32px;
+        margin: 16px;
+        max-width: 100%;
+    }
+
+    .login-logo-row {
+        gap: 10px;
+        margin-bottom: 24px;
+    }
+
+    .login-logo {
+        width: 44px;
+        height: 44px;
+    }
+
+    .login-brand {
+        font-size: 18px;
+    }
+
+    .login-brand span {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .login-title {
+        font-size: 24px;
+    }
+
+    .login-sub {
+        font-size: 12px;
+        margin-bottom: 24px;
+    }
+
+    .form-group {
+        margin-bottom: 14px;
+    }
+
+    .form-group input {
+        font-size: 14px;
+        padding: 10px 14px;
+    }
+
+    .login-btn {
+        font-size: 16px;
+        padding: 12px;
+        letter-spacing: 2px;
+    }
+
+    /* ===== DASHBOARD HEADER ===== */
+    header {
+        padding: 0 16px;
+        height: 56px;
+    }
+
+    .header-left {
+        gap: 10px;
+    }
+
+    .logo {
+        width: 32px;
+        height: 32px;
+    }
+
+    .brand-name {
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+
+    nav ul {
+        gap: 16px;
+    }
+
+    nav ul li a {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .admin-badge {
+        font-size: 9px;
+        padding: 3px 8px;
+        display: none;
+    }
+
+    .logout-btn {
+        font-size: 10px;
+        padding: 5px 10px;
+    }
+
+    /* ===== ADMIN SECTION ===== */
+    .admin-section {
+        padding: 24px 16px;
+    }
+
+    .admin-header {
+        margin-bottom: 20px;
+    }
+
+    .admin-title {
+        font-size: 28px;
+        letter-spacing: 2px;
+    }
+
+    .admin-sub {
+        font-size: 12px;
+    }
+
+    /* ===== TABLE ===== */
+    .table-container {
+        border: none;
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+    }
+
+    table {
+        min-width: 700px;
+    }
+
+    th {
+        font-size: 12px;
+        padding: 10px 12px;
+        letter-spacing: 1px;
+    }
+
+    td {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    .b-date {
+        font-size: 13px;
+    }
+
+    .b-time {
+        font-size: 11px;
+    }
+
+    .type-badge {
+        font-size: 9px;
+        padding: 3px 8px;
+    }
+
+    .hairstyle-badge {
+        font-size: 11px;
+        padding: 3px 8px;
+    }
+
+    .hairstyle-badge img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .action-buttons {
+        gap: 6px;
+        flex-direction: column;
+    }
+
+    .edit-btn, .delete-btn {
+        font-size: 11px;
+        padding: 5px 10px;
+        letter-spacing: 0.5px;
+    }
+
+    /* ===== MODAL ===== */
+    .modal-box {
+        padding: 24px;
+        margin: 16px;
+        max-width: 100%;
+    }
+
+    .modal-title {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .modal-box .form-group {
+        margin-bottom: 14px;
+    }
+
+    .modal-box .form-group input,
+    .modal-box .form-group select {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+
+    .modal-actions {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .cancel-btn, .save-btn {
+        font-size: 14px;
+        padding: 10px;
+        letter-spacing: 1px;
+    }
+}
 .hamburger-btn {
     display: none;
 }
