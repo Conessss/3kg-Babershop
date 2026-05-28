@@ -16,7 +16,132 @@ body {
     font-family: "Bebas Neue", sans-serif;
 
 }
+/* ===== ADMIN MOBILE NAV ===== */
+.hamburger-btn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
 
+.hamburger-btn span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--text);
+    transition: all 0.3s;
+}
+
+.mobile-nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 150;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+.mobile-nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 280px;
+    height: 100vh;
+    background: var(--surface);
+    border-left: 1px solid var(--border);
+    z-index: 200;
+    padding: 80px 32px 40px;
+    transition: right 0.3s ease;
+}
+
+.mobile-nav.active {
+    right: 0;
+}
+
+.mobile-nav-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: var(--text);
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.mobile-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.mobile-nav ul li a {
+    font-family: var(--font-display);
+    font-size: 24px;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: color 0.2s;
+}
+
+.mobile-nav ul li a:hover,
+.mobile-nav ul li a.active {
+    color: var(--red);
+}
+
+.mobile-nav .logout-btn {
+    margin-top: 40px;
+    width: 100%;
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 12px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.2s;
+}
+
+.mobile-nav .logout-btn:hover {
+    border-color: var(--red);
+    color: var(--red);
+}
+
+@media (max-width: 768px) {
+    .hamburger-btn {
+        display: flex;
+    }
+    
+    .mobile-nav,
+    .mobile-nav-overlay {
+        display: block;
+    }
+    
+    /* Hide desktop nav on mobile */
+    header nav {
+        display: none;
+    }
+    
+    .header-right .logout-btn {
+        display: none;
+    }
+}
 /* ===== HEADER ===== */
 header {
     display: flex;
