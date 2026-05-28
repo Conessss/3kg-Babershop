@@ -3,141 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Mark Lawrence S. Tatel - BSIT student, C# developer, and musician from Valenzuela City, Philippines.">
+    <meta name="keywords" content="Mark Lawrence Tatel, contact, C# developer, BSIT, Valenzuela, hire">
+    <meta property="og:title" content="Contact | Mark Lawrence S. Tatel">
+    <meta property="og:description" content="Get in touch with Mark Lawrence S. Tatel for collaborations and opportunities.">
+    <meta property="og:image" content="images/IMG20240529084241-removebg-preview.png">
+    <title>My Contact</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link rel="icon" href="images/339888103_617339846927129_7791889255149775750_n.jpg" />
-    <title>3KG Barbershop — CONTACT</title>
+    <link rel="icon" href="MyFavicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
 </head>
 <body>
-
-<!-- ===== HEADER ===== -->
-<header>
-    <img class="logo" src="images/339888103_617339846927129_7791889255149775750_n.jpg" alt="logo">
-    
-    <!-- Desktop Nav -->
-    <nav class="desktop-nav">
-        <ul>
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="services.html">SERVICES</a></li>
-            <li><a href="our_work.html">OUR WORK</a></li>
-            <li><a href="about.html">ABOUT</a></li>
-            <li><a href="contact.html" class="active">CONTACT</a></li>
-        </ul>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><img src="images/MyFavicon.png" alt="Mark Lawrence Logo"></span>
+                <span>CONTACT</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="resume.html">CV</a></li>
+            </ul>
+            <div class="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
     </nav>
-    
-    <a href="book.html" class="book-btn desktop-book">BOOK NOW</a>
-    
-    <!-- Hamburger Button -->
-    <button class="hamburger-btn" onclick="toggleMobileNav()">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-</header>
 
-<!-- ===== MOBILE NAV DRAWER ===== -->
-<div class="mobile-nav-overlay" onclick="toggleMobileNav()"></div>
-<div class="mobile-nav" id="mobileNav">
-    <button class="mobile-nav-close" onclick="toggleMobileNav()">×</button>
-    <ul>
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="services.html">SERVICES</a></li>
-        <li><a href="our_work.html">OUR WORK</a></li>
-        <li><a href="about.html">ABOUT</a></li>
-        <li><a href="contact.html" class="active">CONTACT</a></li>
-    </ul>
-    <a href="book.html" class="book-btn">BOOK NOW</a>
-</div>
-
-<!-- ===== CONTACT HERO ===== -->
-<section class="contact-hero">
-    <p class="contact-eyebrow">GET IN TOUCH</p>
-    <h1 class="contact-hero-title">FIND<br><span>US.</span></h1>
-    <p class="contact-hero-sub">Walk-ins welcome. Appointments always move faster. Come through, and get clean.</p>
-</section>
-
-<!-- ===== SHOP INFO ===== -->
-<section class="shop-info">
-    <div class="shop-info-dot"></div>
-    <h2 class="shop-info-name">3KG BARBERSHOP</h2>
-    <p class="shop-info-address">ARCEGA BALINAGA ST.</p>
-    <a href="https://www.google.com/maps/place/GENTLE+CUT'S+BARBER+SHOP/@14.6922123,120.9637366,17z/data=!4m15!1m8!3m7!1s0x3397b474c773ef15:0xbdca9541c74ccc3e!2sGENTLE+CUT'S+BARBER+SHOP!8m2!3d14.6922523!4d120.9637673!10e5!16s%2Fg%2F11myd2gzpw!3m5!1s0x3397b474c773ef15:0xbdca9541c74ccc3e!8m2!3d14.6922523!4d120.9637673!16s%2Fg%2F11myd2gzpw?entry=ttu&g_ep=EgoyMDI2MDUxNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="maps-btn">OPEN IN MAPS</a>
-</section>
-
-<!-- ===== MAP SECTION ===== -->
-<section class="map-section">
-    <div class="map-container">
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!4v1779460267262!6m8!1m7!1sVZaDzm0WW5PfEFbVTELt2g!2m2!1d14.69221233870168!2d120.9637366205735!3f36.59541!4f0!5f0.7820865974627469"
-            height="100%" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-    </div>
-</section>
-
-<!-- ===== CONTACT DETAILS CARD ===== -->
-<section class="contact-details-section">
-    <div class="contact-details-card">
-        <div class="contact-details-left">
-            <h2 class="contact-details-title">CONTACT</h2>
+    <section class="page-header contact-header">
+        <div class="container">
+            <h1 class="page-title">Get in Touch</h1>
+            <p class="page-subtitle">Let's create something beautiful together</p>
         </div>
-        <div class="contact-details-right">
-            <div class="detail-row">
-                <div class="detail-icon">
-                    <img src="icons/location.png" alt="Location" width="20" height="20">
-                </div>
-                <div class="detail-text">
-                    <p class="detail-label">LOCATION</p>
-                    <p class="detail-value">MXR7+WG2, Rincon Rd, Valenzuela, 1440 Metro Manila</p>
-                </div>
-            </div>
-            <div class="detail-row">
-                <div class="detail-icon">
-                    <img src="icons/telephone.png" alt="Phone" width="20" height="20">
-                </div>
-                <div class="detail-text">
-                    <p class="detail-label">PHONE</p>
-                    <p class="detail-value">09932690832</p>
-                </div>
-            </div>
-            <div class="detail-row">
-                <div class="detail-icon">
-                    <img src="icons/social-media.png" alt="Instagram" width="20" height="20">
-                </div>
-                <div class="detail-text">
-                    <p class="detail-label">FACEBOOK</p>
-                    <p class="detail-value">3KG</p>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <!-- Open For Section -->
+            <div class="open-for-section">
+                <h2 class="section-heading text-center">Open For</h2>
+                <div class="open-for-grid">
+                    <div class="open-for-card">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>Freelance Projects</h3>
+                        <p>Web and desktop development projects</p>
+                    </div>
+                    <div class="open-for-card">
+                        <i class="fas fa-briefcase"></i>
+                        <h3>Internships</h3>
+                        <p>Opportunities in software development</p>
+                    </div>
+                    <div class="open-for-card">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Collaboration</h3>
+                        <p>C# or web project collaborations</p>
+                    </div>
                 </div>
             </div>
-            <div class="detail-row">
-                <div class="detail-icon">
-                    <img src="icons/mail.png" alt="Email" width="20" height="20">
+
+            <div class="contact-wrapper">
+                <div class="contact-info-panel">
+                    <h2 class="panel-title">Contact Information</h2>
+                    <p class="panel-desc">Feel free to reach out for collaborations, jam sessions, or just to say hello!</p>
+
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-details">
+                                <h3>Email</h3>
+                                <a href="mailto:marklawrencetatel2005@gmail.com">marklawrencetatel2005@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="method-details">
+                                <h3>Phone</h3>
+                                <p>+63 993 269 0832</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="method-details">
+                                <h3>Location</h3>
+                                <p>Sta Brigida St. Karuhtan Valenzuela City</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-connect">
+                        <h3>Connect With Me</h3>
+                        <div class="social-icons-large">
+                            <a href="https://www.facebook.com/share/181NbdAtwJ/" class="social-icon" aria-label="Facebook profile"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/k_ramm1?igsh=MTRteGNzbmJseWlqcw==" target="_blank" class="social-icon" aria-label="Instagram profile"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.tiktok.com/@markieetot_" target="_blank" class="social-icon" aria-label="TikTok profile"><i class="fab fa-tiktok"></i></a>
+                            <a href="https://t.me/tatsillg" target="_blank" class="social-icon" aria-label="Telegram profile"><i class="fab fa-telegram"></i></a>
+                            <a href="https://github.com/Conessss" target="_blank" class="social-icon" aria-label="GitHub profile"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="resume-download">
+                        <a href="resume.html" class="btn btn-resume">
+                            <i class="fas fa-file-alt"></i> View My CV
+                        </a>
+                    </div>
                 </div>
-                <div class="detail-text">
-                    <p class="detail-label">EMAIL</p>
-                    <p class="detail-value">3KGBARBERSHOP@GMAIL.COM</p>
+
+                <div class="contact-form-panel">
+                    <form class="contact-form-modern" action="https://formsubmit.co/lightakagami37@gmail.com" method="POST" id="contactForm">
+                        <div id="form-message" class="form-message" style="display:none;"></div>
+
+                        <div class="form-row">
+                            <div class="form-group floating">
+                                <input type="text" id="name" name="name" required placeholder=" ">
+                                <label for="name">Your Name</label>
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="form-group floating">
+                                <input type="email" id="email" name="email" required placeholder=" ">
+                                <label for="email">Your Email</label>
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group floating">
+                            <input type="text" id="subject" name="subject" required placeholder=" ">
+                            <label for="subject">Subject</label>
+                            <i class="fas fa-tag"></i>
+                        </div>
+
+                        <div class="form-group floating">
+                            <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
+                            <label for="message">Your Message</label>
+                            <i class="fas fa-comment"></i>
+                        </div>
+
+                        <button type="submit" class="btn btn-submit">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ===== FOOTER ===== -->
-<footer class="site-footer">
-    <span class="footer-logo">3KG</span>
-    <span class="footer-mid">EST. SINCE 2023 &nbsp;·&nbsp; NO FLUFF &nbsp;·&nbsp; ALL CRAFT</span>
-    <span class="footer-copy">3KG BARBERSHOP © 2026</span>
-</footer>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-nav">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="skills.html">Skills</a>
+                    <a href="education.html">Education</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="resume.html">CV</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/181NbdAtwJ/" aria-label="Facebook profile" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/k_ramm1?igsh=MTRteGNzbmJseWlqcw==" aria-label="Instagram profile" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@markieetot_" aria-label="TikTok profile" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://t.me/tatsillg" aria-label="Telegram profile" target="_blank"><i class="fab fa-telegram"></i></a>
+                </div>
+                <p class="copyright">&copy; 2026 Mark Lawrence S. Tatel. Crafted with passion.</p>
+                <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <i class="fas fa-arrow-up"></i> Back to Top
+                </button>
+            </div>
+        </div>
+    </footer>
 
-<script>
-    function toggleMobileNav() {
-        document.getElementById('mobileNav').classList.toggle('active');
-        document.querySelector('.mobile-nav-overlay').classList.toggle('active');
-    }
-</script>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
 
+        // Form handling
+        const form = document.getElementById('contactForm');
+        const formMessage = document.getElementById('form-message');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    formMessage.style.display = 'block';
+                    formMessage.className = 'form-message success';
+                    formMessage.textContent = 'Thank you! Your message has been sent successfully.';
+                    form.reset();
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                formMessage.style.display = 'block';
+                formMessage.className = 'form-message error';
+                formMessage.textContent = 'Oops! Something went wrong. Please try again or email me directly.';
+            }
+        });
+    </script>
 </body>
 </html>
