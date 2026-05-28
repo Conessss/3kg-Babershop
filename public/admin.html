@@ -604,8 +604,26 @@
                 <span class="admin-badge">Admin</span>
                 <button class="logout-btn" onclick="handleLogout()">Log Out</button>
             </div>
-        </header>
 
+            <!-- Mobile Hamburger -->
+<button class="hamburger-btn" onclick="toggleMobileNav()" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+        </header>
+<!-- Mobile Nav Overlay -->
+<div class="mobile-nav-overlay" onclick="toggleMobileNav()"></div>
+
+<!-- Mobile Nav Drawer -->
+<div class="mobile-nav">
+    <button class="mobile-nav-close" onclick="toggleMobileNav()">&times;</button>
+    <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="admin.html" class="active">ADMIN DASHBOARD</a></li>
+    </ul>
+    <button class="logout-btn" onclick="handleLogout()">Log Out</button>
+</div>
         <section class="admin-section">
             <div class="admin-header">
                 <h1 class="admin-title">ADMIN <span>DASHBOARD</span></h1>
