@@ -2901,24 +2901,7 @@ nav ul li a.active {
             letter-spacing: 2px;
         }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 28px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 2px;
-            color: var(--muted);
-            transition: color 0.2s;
-        }
-
-        nav ul li a:hover,
-        nav ul li a.active { color: var(--red); }
-
+       
         .header-right {
             display: flex;
             align-items: center;
