@@ -3183,3 +3183,11 @@ nav ul li a.active {
         }
 
         .save-btn:hover { background: var(--red-dark); }
+
+.right-body img {
+    transition: transform 0.5s ease;
+}
+
+.right-body img:hover {
+    transform: rotate(360deg);
+}
