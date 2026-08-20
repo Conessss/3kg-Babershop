@@ -3183,16 +3183,37 @@ nav ul li a.active {
         }
 
         .save-btn:hover { background: var(--red-dark); }
-
-.right-body img {
-    transition: transform 0.3s ease;
+.snip-wrap {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    margin-right: 110px;
 }
 
-.right-body img:hover {
-    animation: spinLogo 1.5s linear infinite;
+.snip-half {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255,255,255,0.1);
+    transition: transform 0.35s ease, clip-path 0.35s ease;
 }
 
-@keyframes spinLogo {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+.snip-top {
+    clip-path: inset(0 0 50% 0);
+}
+
+.snip-bottom {
+    clip-path: inset(50% 0 0 0);
+}
+
+.snip-wrap:hover .snip-top {
+    transform: translate(-8px, -8px) rotate(-3deg);
+}
+
+.snip-wrap:hover .snip-bottom {
+    transform: translate(8px, 8px) rotate(3deg);
 }
